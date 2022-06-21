@@ -2,11 +2,18 @@
   "name": "edplus",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=16.15.1",
+    "npm": ">=8.11.0",
+    "yarn": "please-use-npm"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -14,11 +21,15 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "@types/node": "18.0.0",
     "@types/react": "18.0.13",
     "@types/react-dom": "18.0.5",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
     "typescript": "4.7.3"
   }
 }
