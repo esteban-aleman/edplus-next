@@ -15,5 +15,8 @@
         "storybook/hierarchy-separator": "error"
       }
     }
-  ]
+  ],
+  "globals": {
+    "React": "readonly"
+  }
 }
