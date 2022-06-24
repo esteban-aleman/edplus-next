@@ -24,7 +24,10 @@ export const useTranslation = () => {
   }, [router?.locale]);
 
   const t = useCallback(
-    (key: string) => {
+    (key?: string) => {
+      if (!key) {
+        return '';
+      }
       return dictionary?.[key] || key;
     },
     [dictionary]
