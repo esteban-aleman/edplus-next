@@ -16,7 +16,7 @@ describe('CustomLink rendering', () => {
     render(<CustomLink {...mockCustomLinkProps.withChildren} />);
 
     const linkChildren = screen.getByText(
-      ' mockCustomLinkProps.withChildren.children.props.children'
+      mockCustomLinkProps.withChildren.children.props.children
     );
 
     expect(linkChildren).toBeInTheDocument();
