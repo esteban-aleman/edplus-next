@@ -22,9 +22,8 @@
 }
 .link {
   color: constants.$secondary;
-  text-decoration: none;
-  padding: 1rem;
-  padding-right: 0;
+  margin: 1rem;
+  margin-right: 0;
   transition: color ease-in-out 0.3s;
   font-size: constants.$font-s;
   &:hover {

@@ -18,5 +18,8 @@
   ],
   "globals": {
     "React": "readonly"
+  },
+  "env": {
+    "jest": true
   }
 }

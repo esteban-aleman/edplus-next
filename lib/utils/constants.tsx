@@ -29,3 +29,12 @@ export const DETAILS_SECTIONS = {
   vision: 'vision',
   donate: 'donate',
 };
+
+export const DEFAULT = {
+  string: 'DEFAULT_STRING',
+  linkUrl: '#',
+  externalLinkUrl: 'https://www.google.com',
+  className: 'DEFAULT_CLASSNAME',
+  locale: 'es',
+  children: <div>DEFAULT_CHILDREN</div>,
+};
