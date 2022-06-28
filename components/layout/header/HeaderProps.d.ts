@@ -1,1 +1,1 @@
-export type HeaderProps = unknown;
+export type HeaderProps = Record<string, unknown>;
