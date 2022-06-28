@@ -22,7 +22,6 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "@storybook/preset-scss": "^1.0.3",
     "classnames": "^2.3.1",
     "cross-env": "^7.0.3",
     "next": "12.1.6",
@@ -39,6 +38,7 @@
     "@storybook/addon-links": "^6.5.9",
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.4",
@@ -46,6 +46,8 @@
     "@types/node": "18.0.0",
     "@types/react": "18.0.13",
     "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "babel-loader": "^8.2.5",
     "cypress": "^10.2.0",
     "eslint": "8.17.0",
@@ -57,7 +59,7 @@
     "prettier": "^2.7.1",
     "sass": "^1.53.0",
     "storybook-addon-next": "^1.6.6",
-    "typescript": "4.7.3",
+    "typescript": "^4.7.3",
     "webpack": "^5.73.0"
   },
   "resolutions": {

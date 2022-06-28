@@ -6,7 +6,11 @@ import { CustomLinkProps } from './CustomLinkProps';
 export default {
   title: 'shared/CustomLink',
   component: CustomLink,
-  argTypes: {},
+  argTypes: {
+    children: {
+      control: { type: 'object' },
+    },
+  },
 } as ComponentMeta<typeof CustomLink>;
 
 const Template: ComponentStory<typeof CustomLink> = (args) => (
@@ -14,7 +18,16 @@ const Template: ComponentStory<typeof CustomLink> = (args) => (
 );
 
 export const Base = Template.bind({});
-
 Base.args = {
   ...mockCustomLinkProps.base,
+} as CustomLinkProps;
+
+export const External = Template.bind({});
+External.args = {
+  ...mockCustomLinkProps.external,
+} as CustomLinkProps;
+
+export const WithChildren = Template.bind({});
+WithChildren.args = {
+  ...mockCustomLinkProps.withChildren,
 } as CustomLinkProps;

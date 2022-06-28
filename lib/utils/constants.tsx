@@ -1,23 +1,23 @@
-export const TITLE_TYPES = {
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-};
+export enum TITLE_TYPES {
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+}
 
-export const BUTTON_TYPES = {
-  primary: 'primary',
-  secondary: 'secondary',
-};
+export enum BUTTON_TYPES {
+  primary = 'primary',
+  secondary = 'secondary',
+}
 
-export const SIMPLE_HERO_TYPES = {
-  primary: 'primary',
-  light: 'light',
-};
+export enum SIMPLE_HERO_TYPES {
+  primary = 'primary',
+  light = 'light',
+}
 
-export const LOCALES = {
-  ES: 'es',
-  EN: 'en',
-};
+export enum LOCALES {
+  EN = 'en',
+  ES = 'es',
+}
 
 export const DETAILS_PATH = '/details/';
 
@@ -35,6 +35,6 @@ export const DEFAULT = {
   linkUrl: '#',
   externalLinkUrl: 'https://www.google.com',
   className: 'DEFAULT_CLASSNAME',
-  locale: 'es',
+  locale: LOCALES.ES,
   children: <div>DEFAULT_CHILDREN</div>,
 };

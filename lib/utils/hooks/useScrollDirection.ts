@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 const useScrollDirection = () => {
   const [scrollUp, setScrollUp] = useState<boolean | null>(null);
 
@@ -18,9 +18,9 @@ const useScrollDirection = () => {
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    window.addEventListener("scroll", updateScrollDirection);
+    window.addEventListener('scroll', updateScrollDirection);
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection);
+      window.removeEventListener('scroll', updateScrollDirection);
     };
   }, [scrollUp]);
 

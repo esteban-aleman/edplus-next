@@ -1,8 +1,10 @@
+import { LOCALES } from 'lib/utils/constants';
+
 export type CustomLinkProps = {
   text?: string;
   target?: string;
   href: string;
   className?: string;
-  locale?: string;
+  locale?: LOCALES;
   children?: React.ReactNode;
 };
