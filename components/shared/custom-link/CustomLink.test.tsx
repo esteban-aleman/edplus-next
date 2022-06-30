@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { ReactElement } from 'react';
 import CustomLink from './CustomLink';
 import { mockCustomLinkProps } from './CustomLink.mocks';
 
@@ -7,8 +8,7 @@ describe('CustomLink rendering', () => {
   it('renders a CustomLink', () => {
     render(<CustomLink {...mockCustomLinkProps.base} />);
 
-    const link = screen.getByText(mockCustomLinkProps.base.text);
-
+    const link = screen.getByText(mockCustomLinkProps.base.text || '');
     expect(link).toBeInTheDocument();
   });
 
@@ -16,9 +16,8 @@ describe('CustomLink rendering', () => {
     render(<CustomLink {...mockCustomLinkProps.withChildren} />);
 
     const linkChildren = screen.getByText(
-      mockCustomLinkProps.withChildren.children.props.children
+      (mockCustomLinkProps.withChildren.children as ReactElement).props.children
     );
-
     expect(linkChildren).toBeInTheDocument();
   });
 });

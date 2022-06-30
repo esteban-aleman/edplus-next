@@ -4,7 +4,9 @@ import { useCallback, useEffect, useState } from 'react';
 import EN from './en.json';
 import ES from './es.json';
 
-const getLanguageDictionary = (lang: string): { [key: string]: string } => {
+export const getLanguageDictionary = (
+  lang: string
+): { [key: string]: string } => {
   switch (lang) {
     case LOCALES.EN:
       return EN;

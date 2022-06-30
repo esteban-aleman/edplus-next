@@ -7,16 +7,26 @@ const FooterColumn = (props: FooterColumnProps) => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.title}>{title}</div>
-      <ul className={styles.linkList}>
+      <h2
+        className={styles.title}
+        id={`footer-column-${title.replace(/ /g, '')}`}
+        tabIndex={0}
+      >
+        {title}
+      </h2>
+      <ul
+        className={styles.linkList}
+        aria-labelledby={`footer-column-${title.replace(/ /g, '')}`}
+      >
         {links.map((l) => (
-          <Link
-            key={l.text}
-            href={l.href}
-            target={l.target}
-            className={styles.link}
-            text={l.text}
-          />
+          <li key={l.text} className={styles.linkListItem}>
+            <Link
+              href={l.href}
+              target={l.target}
+              className={styles.link}
+              text={l.text}
+            />
+          </li>
         ))}
       </ul>
     </div>

@@ -16,10 +16,10 @@ const Header = () => {
   return (
     <header className={classnames(styles.root, { [styles.hidden]: !scrollUp })}>
       <div className={styles.container}>
-        <Link href={'/'}>
+        <Link href={'/'} title={t('home-link-title')}>
           <Image
             src={Logo}
-            alt="Educacion Plus Logo"
+            alt={t('alt-logo')}
             width={54}
             height={48}
             aria-hidden={true}

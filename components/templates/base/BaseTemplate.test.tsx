@@ -8,7 +8,6 @@ describe('BaseTemplate rendering', () => {
     render(<BaseTemplate {...mockBaseTemplateProps.base} />);
 
     const base = screen.getByText(mockBaseTemplateProps.base.sampleTextProp);
-
     expect(base).toBeInTheDocument();
   });
 });
