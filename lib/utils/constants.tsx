@@ -1,4 +1,5 @@
 export enum TITLE_TYPES {
+  h1 = 'h1',
   h3 = 'h3',
   h4 = 'h4',
   h5 = 'h5',
@@ -29,7 +30,6 @@ export const DETAILS_SECTIONS = {
   vision: 'vision',
   donate: 'donate',
 };
-
 export const DEFAULT = {
   string: 'DEFAULT_STRING',
   linkUrl: '#',
@@ -37,4 +37,5 @@ export const DEFAULT = {
   className: 'DEFAULT_CLASSNAME',
   locale: LOCALES.ES,
   children: <div>DEFAULT_CHILDREN</div>,
+  childrenText: 'DEFAULT_CHILDREN',
 };

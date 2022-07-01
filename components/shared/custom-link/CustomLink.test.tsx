@@ -1,23 +1,22 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import { ReactElement } from 'react';
+import { render, screen, within } from '@testing-library/react';
+import { DEFAULT } from 'lib/utils/constants';
 import CustomLink from './CustomLink';
 import { mockCustomLinkProps } from './CustomLink.mocks';
 
-describe('CustomLink rendering', () => {
-  it('renders a CustomLink', () => {
+describe('CustomLink', () => {
+  it('should render a CustomLink', () => {
     render(<CustomLink {...mockCustomLinkProps.base} />);
 
-    const link = screen.getByText(mockCustomLinkProps.base.text || '');
+    const link = screen.getByRole('link');
     expect(link).toBeInTheDocument();
   });
 
-  it('renders a CustomLink with children', () => {
+  it('should render a CustomLink with children', () => {
     render(<CustomLink {...mockCustomLinkProps.withChildren} />);
 
-    const linkChildren = screen.getByText(
-      (mockCustomLinkProps.withChildren.children as ReactElement).props.children
-    );
-    expect(linkChildren).toBeInTheDocument();
+    const link = screen.getByRole('link');
+    const children = within(link).getByText(DEFAULT.childrenText);
+    expect(children).not.toBeNull();
   });
 });

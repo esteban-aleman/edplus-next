@@ -10,17 +10,19 @@ window.onscroll = jest
     window.pageYOffset = 0;
   });
 
-test('triggers scroll update for useScrollDirection', () => {
-  const { result } = renderHook(() => useScrollDirection());
-  expect(result.current).toBeTruthy();
+describe('useScrollDirection', () => {
+  test('should reflect scroll changes', () => {
+    const { result } = renderHook(() => useScrollDirection());
+    expect(result.current).toBeTruthy();
 
-  act(() => {
-    fireEvent.scroll(window);
-  });
-  expect(result.current).toBeFalsy();
+    act(() => {
+      fireEvent.scroll(window);
+    });
+    expect(result.current).toBeFalsy();
 
-  act(() => {
-    fireEvent.scroll(window);
+    act(() => {
+      fireEvent.scroll(window);
+    });
+    expect(result.current).toBeTruthy();
   });
-  expect(result.current).toBeTruthy();
 });

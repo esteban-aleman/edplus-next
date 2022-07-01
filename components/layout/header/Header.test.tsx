@@ -7,8 +7,8 @@ import { mockHeaderProps } from './Header.mocks';
 
 const dictionary = getLanguageDictionary(DEFAULT.locale);
 
-describe('Header rendering', () => {
-  it('renders a Header with the logo', () => {
+describe('Header', () => {
+  it('should render a Header with the logo', () => {
     render(<Header {...mockHeaderProps.base} />);
 
     const base = screen.getByAltText(dictionary['alt-logo']);

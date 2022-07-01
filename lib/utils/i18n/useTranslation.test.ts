@@ -14,15 +14,15 @@ jest.mock('next/router', () => ({
     })),
 }));
 
-describe('dictionary based on locale for useTranslation', () => {
-  test('returns correct default dictionary from useTranslation', () => {
+describe('useTranslation', () => {
+  test('should return default dictionary', () => {
     const { result } = renderHook(() => useTranslation());
     const { t } = result.current;
 
     expect(t('alternative-language')).toBe(ES['alternative-language']);
   });
 
-  test('returns correct alternative dictionary from useTranslation', () => {
+  test('should return alternative dictionary', () => {
     const { result } = renderHook(() => useTranslation());
     const { t } = result.current;
 
