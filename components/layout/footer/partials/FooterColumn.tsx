@@ -10,7 +10,6 @@ const FooterColumn = (props: FooterColumnProps) => {
       <h2
         className={styles.title}
         id={`footer-column-${title.replace(/ /g, '')}`}
-        tabIndex={0}
       >
         {title}
       </h2>

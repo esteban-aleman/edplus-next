@@ -5,6 +5,23 @@ export enum TITLE_TYPES {
   h5 = 'h5',
 }
 
+export enum TEXT_TAGS {
+  p = 'p',
+  span = 'span',
+  strong = 'strong',
+  em = 'em',
+  blockquote = 'blockquote',
+  code = 'code',
+  mark = 'mark',
+  ins = 'ins',
+  del = 'del',
+  sup = 'sup',
+  sub = 'sub',
+  small = 'small',
+  i = 'i',
+  b = 'b',
+}
+
 export enum BUTTON_TYPES {
   primary = 'primary',
   secondary = 'secondary',

@@ -15,15 +15,9 @@ const Header = () => {
 
   return (
     <header className={classnames(styles.root, { [styles.hidden]: !scrollUp })}>
-      <div className={styles.container}>
-        <Link href={'/'} title={t('home-link-title')}>
-          <Image
-            src={Logo}
-            alt={t('alt-logo')}
-            width={54}
-            height={48}
-            aria-hidden={true}
-          />
+      <nav className={styles.container}>
+        <Link href={'/'}>
+          <Image src={Logo} alt={t('alt-logo')} width={54} height={48} />
         </Link>
         <Link
           href={'/'}
@@ -31,7 +25,7 @@ const Header = () => {
           text={t ? t('alternative-language') : ''}
           className={styles.link}
         />
-      </div>
+      </nav>
     </header>
   );
 };

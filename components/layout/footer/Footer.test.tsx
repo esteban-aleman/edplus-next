@@ -1,16 +1,13 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { DEFAULT } from 'lib/utils/constants';
-import { getLanguageDictionary } from 'lib/utils/i18n/useTranslation';
 import Footer from './Footer';
 import { mockFooterProps } from './Footer.mocks';
 
-const dictionary = getLanguageDictionary(DEFAULT.locale);
 describe('Footer', () => {
-  it('should render a Footer with logo', () => {
+  it('should render a Footer', () => {
     render(<Footer {...mockFooterProps} />);
 
-    const base = screen.getByAltText(dictionary['alt-logo']);
+    const base = screen.getByRole('contentinfo');
     expect(base).toBeInTheDocument();
   });
 

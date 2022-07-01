@@ -41,21 +41,16 @@ const Footer = (props: FooterProps) => {
           <div className={styles.logo}>
             <Image
               src={Logo}
-              alt={t('alt-logo')}
+              alt={''}
+              aria-hidden={true}
+              role="presentation"
               width={54}
               height={48}
-              aria-hidden={true}
             />
           </div>
-          <p className={styles.contactBlock} tabIndex={0}>
-            {t('address')}
-          </p>
-          <p className={styles.contactBlock} tabIndex={0}>
-            {'edplus@edplus.or.cr'}
-          </p>
-          <p className={styles.contactBlock} tabIndex={0}>
-            {'+506 2227 8642'}
-          </p>
+          <p className={styles.contactBlock}>{t('address')}</p>
+          <p className={styles.contactBlock}>{'edplus@edplus.or.cr'}</p>
+          <p className={styles.contactBlock}>{'+506 2227 8642'}</p>
         </div>
         <div className={styles.columns}>
           {mappedColumns.map((c) => (
@@ -86,9 +81,7 @@ const Footer = (props: FooterProps) => {
             text={t('legal-document-three')}
           />
         </div>
-        <p className={styles.copyright} tabIndex={0}>
-          {t('copyright')}
-        </p>
+        <p className={styles.copyright}>{t('copyright')}</p>
       </div>
     </footer>
   );

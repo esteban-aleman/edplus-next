@@ -18,7 +18,7 @@ describe('Button', () => {
     let clicked = false;
     render(
       <Button
-        {...mockButtonProps.primary}
+        {...mockButtonProps.secondary}
         callback={() => {
           clicked = true;
         }}

@@ -1,6 +1,6 @@
-import { ButtonProps } from './ButtonProps';
-import styles from './Button.module.scss';
 import classnames from 'classnames';
+import styles from './Button.module.scss';
+import { ButtonProps } from './ButtonProps';
 
 const Button = (props: ButtonProps): JSX.Element => {
   const { type, text, callback, className } = props;
