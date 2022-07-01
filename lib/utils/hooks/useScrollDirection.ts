@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 const useScrollDirection = () => {
-  const [scrollUp, setScrollUp] = useState<boolean | null>(null);
+  const [scrollUp, setScrollUp] = useState<boolean>(true);
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -9,6 +9,7 @@ const useScrollDirection = () => {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? false : true;
+
       if (
         direction !== scrollUp &&
         (scrollY - lastScrollY > threshold ||

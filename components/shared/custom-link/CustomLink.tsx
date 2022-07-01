@@ -1,13 +1,11 @@
 import cx from 'classnames';
 import { TARGET_BLANK } from 'lib/utils/constants';
 import Link from 'next/link';
-import { LinkHTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import styles from './CustomLink.module.scss';
 import { CustomLinkProps } from './CustomLinkProps';
 
-const CustomLink = (
-  props: CustomLinkProps & LinkHTMLAttributes<HTMLElement>
-) => {
+const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
   const { text, target, href, className, locale, children, ...rest } = props;
   return target === TARGET_BLANK ? (
     <a

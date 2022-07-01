@@ -7,14 +7,12 @@ import { mockFooterProps } from './Footer.mocks';
 
 const dictionary = getLanguageDictionary(DEFAULT.locale);
 
-describe('Footer rendering', () => {
-  it('renders a Footer with logo and columns', () => {
-    render(<Footer {...mockFooterProps} />);
+it('renders a Footer with logo and columns', () => {
+  render(<Footer {...mockFooterProps} />);
 
-    const base = screen.getByAltText(dictionary['alt-logo']);
-    expect(base).toBeInTheDocument();
+  const base = screen.getByAltText(dictionary['alt-logo']);
+  expect(base).toBeInTheDocument();
 
-    const columns = screen.getAllByRole('list');
-    expect(columns.length).toBe(mockFooterProps.columns.length);
-  });
+  const columns = screen.getAllByRole('list');
+  expect(columns.length).toBe(mockFooterProps.columns.length);
 });

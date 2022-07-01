@@ -4,13 +4,11 @@ import { ReactElement } from 'react';
 import MainLayout from './MainLayout';
 import { mockMainLayoutProps } from './MainLayout.mocks';
 
-describe('MainLayout rendering', () => {
-  it('renders a MainLayout', () => {
-    render(<MainLayout {...mockMainLayoutProps.base} />);
+it('renders a MainLayout with children', () => {
+  render(<MainLayout {...mockMainLayoutProps.base} />);
 
-    const mainChildren = screen.getByText(
-      (mockMainLayoutProps.base.children as ReactElement).props.children
-    );
-    expect(mainChildren).toBeInTheDocument();
-  });
+  const mainChildren = screen.getByText(
+    (mockMainLayoutProps.base.children as ReactElement).props.children
+  );
+  expect(mainChildren).toBeInTheDocument();
 });
