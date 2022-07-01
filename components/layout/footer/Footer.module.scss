@@ -11,7 +11,7 @@
   margin: auto;
   max-width: constants.$containerWidth;
   padding-bottom: 6.5rem;
-  border-bottom: solid 1px constants.$quaternary;
+  border-bottom: solid 0.06rem constants.$quaternary;
 }
 
 .columns {
@@ -48,7 +48,7 @@
 
 .separator {
   display: block;
-  width: 1px;
+  width: 0.06rem;
   background-color: constants.$quaternary;
   height: 1rem;
   margin: 0 1rem;

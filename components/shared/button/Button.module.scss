@@ -11,7 +11,7 @@
 }
 .secondary {
   background-color: transparent;
-  border: solid 1px constants.$white;
+  border: solid 0.06rem constants.$white;
   color: constants.$white;
   &:hover {
     background-color: constants.$primary;
@@ -21,7 +21,7 @@
 .primary {
   background-color: constants.$primary;
   color: constants.$white;
-  border: solid 1px constants.$primary;
+  border: solid 0.06rem constants.$primary;
   &:hover {
     background-color: transparent;
     color: constants.$primary;
