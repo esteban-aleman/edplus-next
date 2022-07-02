@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import styles from './Button.module.scss';
 import { ButtonProps } from './ButtonProps';
 
-const Button = (props: ButtonProps): JSX.Element => {
+const Button = (props: ButtonProps) => {
   const { type, text, callback, className } = props;
   return (
     <button

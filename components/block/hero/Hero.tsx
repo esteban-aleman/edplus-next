@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './Hero.module.scss';
 import { HeroProps } from './HeroProps';
 
-const Hero = (props: HeroProps): JSX.Element => {
+const Hero = (props: HeroProps) => {
   const { backgroundImage, eyebrow, title, ctaText, ctaCallback } = props;
   return (
     <section className={styles.root}>
