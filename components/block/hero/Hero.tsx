@@ -16,6 +16,7 @@ const Hero = (props: HeroProps) => {
           objectFit="cover"
           aria-hidden={true}
           role="presentation"
+          placeholder="blur"
           priority
         />
       </div>

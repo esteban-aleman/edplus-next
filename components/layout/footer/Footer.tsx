@@ -2,7 +2,7 @@ import { Link } from 'components/shared';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Image from 'next/image';
 import Logo from 'public/media/images/logo_light.png';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import styles from './Footer.module.scss';
 import { FooterProps } from './FooterProps';
 import FooterColumn from './partials/FooterColumn';
@@ -11,28 +11,28 @@ import { FooterColumnProps } from './partials/FooterColumnProps';
 const Footer = (props: FooterProps) => {
   const { columns } = props;
   const { t } = useTranslation();
-  const [mappedColumns, setMappedColumns] = useState<Array<FooterColumnProps>>(
-    []
-  );
+  // const [mappedColumns, setMappedColumns] = useState<Array<FooterColumnProps>>(
+  //   []
+  // );
 
   // Translate texts
-  useEffect(() => {
-    const mapColumns = (
-      entries: Array<FooterColumnProps>
-    ): Array<FooterColumnProps> =>
-      entries.map((c) => {
-        return {
-          title: t(c.title),
-          links: c.links.map((l) => {
-            return {
-              ...l,
-              text: t(l.text),
-            };
-          }),
-        };
-      });
-    setMappedColumns(mapColumns(columns));
-  }, [columns, t]);
+  // useEffect(() => {
+  const mapColumns = (
+    entries: Array<FooterColumnProps>
+  ): Array<FooterColumnProps> =>
+    entries.map((c) => {
+      return {
+        title: t(c.title),
+        links: c.links.map((l) => {
+          return {
+            ...l,
+            text: t(l.text),
+          };
+        }),
+      };
+    });
+  // setMappedColumns(mapColumns(columns));
+  // }, [columns, t]);
 
   return (
     <footer className={styles.root}>
@@ -53,7 +53,7 @@ const Footer = (props: FooterProps) => {
           <p className={styles.contactBlock}>{'+506 2227 8642'}</p>
         </div>
         <div className={styles.columns}>
-          {mappedColumns.map((c) => (
+          {mapColumns(columns).map((c) => (
             <FooterColumn key={c.title} title={c.title} links={c.links} />
           ))}
         </div>

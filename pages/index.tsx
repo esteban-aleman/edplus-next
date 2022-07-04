@@ -1,8 +1,9 @@
-import { Hero } from 'components/block';
+import { Hero, TextWithMedia } from 'components/block';
 import { MainLayout } from 'components/layout';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
+import Team from 'public/media/images/team1.jpg';
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
@@ -26,6 +27,11 @@ const Home: NextPageWithLayout = () => {
         ctaText={t('what-are-we-doing')}
         ctaCallback={() => scrollTo(activitiesId)}
         backgroundImage={HeroImage}
+      />
+      <TextWithMedia
+        title={t('who-are-we')}
+        text={t('who-is-edplus')}
+        image={Team}
       />
     </>
   );

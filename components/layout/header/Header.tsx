@@ -17,12 +17,14 @@ const Header = () => {
     <header className={classnames(styles.root, { [styles.hidden]: !scrollUp })}>
       <nav className={styles.container}>
         <Link href={'/'}>
-          <Image src={Logo} alt={t('alt-logo')} width={54} height={48} />
+          <div className={styles.logo}>
+            <Image src={Logo} alt={t('alt-logo')} />
+          </div>
         </Link>
         <Link
           href={'/'}
           locale={router?.locale === LOCALES.ES ? LOCALES.EN : LOCALES.ES}
-          text={t ? t('alternative-language') : ''}
+          text={t('alternative-language')}
           className={styles.link}
         />
       </nav>
