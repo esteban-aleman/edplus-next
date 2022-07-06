@@ -8,13 +8,13 @@ import {
 import { CardProps } from 'components/block/cards-grid/partials/CardProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { MainLayout } from 'components/layout';
+import { involvementCards, timelineEntries } from 'lib/page-data';
 import { SIMPLE_HERO_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team1.jpg';
 import { NextPageWithLayout } from './page';
-import { involvementCards, timelineEntries } from './page-data';
 
 const Home: NextPageWithLayout = () => {
   const activitiesId = 'activities';
