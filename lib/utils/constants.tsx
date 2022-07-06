@@ -56,4 +56,5 @@ export const DEFAULT = {
   locale: LOCALES.ES,
   children: <div>DEFAULT_CHILDREN</div>,
   childrenText: 'DEFAULT_CHILDREN',
+  id: 'DEFAULT_ID',
 };

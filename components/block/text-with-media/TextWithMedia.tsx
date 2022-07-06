@@ -7,7 +7,7 @@ import { TextWithMediaProps } from './TextWithMediaProps';
 const TextWithMedia = (props: TextWithMediaProps) => {
   const { title, text, image, children } = props;
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <div className={styles.contentLeft}>
         <Title
           title={title}
@@ -29,7 +29,7 @@ const TextWithMedia = (props: TextWithMediaProps) => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -6,11 +6,7 @@ import { CustomLinkProps } from './CustomLinkProps';
 export default {
   title: 'shared/CustomLink',
   component: CustomLink,
-  argTypes: {
-    children: {
-      control: { type: 'object' },
-    },
-  },
+  argTypes: {},
 } as ComponentMeta<typeof CustomLink>;
 
 const Template: ComponentStory<typeof CustomLink> = (args) => (

@@ -1,19 +1,36 @@
-import { Hero, TextWithMedia } from 'components/block';
+import { Hero, SimpleHero, TextWithMedia, Timeline } from 'components/block';
+import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { MainLayout } from 'components/layout';
+import { SIMPLE_HERO_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team1.jpg';
 import { NextPageWithLayout } from './page';
+import { timelineEntries } from './page-data';
 
 const Home: NextPageWithLayout = () => {
   const activitiesId = 'activities';
+  const getInvolvedId = 'getInvolved';
   const { t } = useTranslation();
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     el && el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+
+  const mapTimeLineEntries = (
+    entries: Array<TimelineEntryProps>
+  ): Array<TimelineEntryProps> => {
+    return entries.map((e) => {
+      return {
+        date: t(e.date),
+        title: t(e.title),
+        description: t(e.description),
+      };
+    });
+  };
+
   return (
     <>
       <Head>
@@ -32,6 +49,16 @@ const Home: NextPageWithLayout = () => {
         title={t('who-are-we')}
         text={t('who-is-edplus')}
         image={Team}
+      />
+      <Timeline
+        entries={mapTimeLineEntries(timelineEntries)}
+        title={t('where-do-we-come-from')}
+      />
+      <SimpleHero
+        type={SIMPLE_HERO_TYPES.primary}
+        title={t('how-to-get-involved')}
+        text={t('how-to-get-involved-description')}
+        id={getInvolvedId}
       />
     </>
   );
