@@ -1,9 +1,6 @@
 @use 'styles/_constants.scss' as constants;
 
 .root {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   min-height: 37.5rem;
   display: flex;
   justify-content: flex-end;

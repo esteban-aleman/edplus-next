@@ -1,6 +1,10 @@
 // import { CardProps } from 'components/cards-grid/partials/CardProps';
 
+import { CardProps } from 'components/block/cards-grid/partials/CardProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
+import Donate from 'public/media/images/donate.jpg';
+import Sponsor from 'public/media/images/sponsor.jpg';
+import Volunteer from 'public/media/images/volunteer.jpg';
 
 const timelineEntries: Array<TimelineEntryProps> = [
   {
@@ -35,29 +39,29 @@ const timelineEntries: Array<TimelineEntryProps> = [
   },
 ];
 
-// const involvementCards: Array<CardProps> = [
-//   {
-//     image: Volunteer,
-//     title: 'volunteer',
-//     description: 'volunteer-description',
-//     linkText: 'contact-us',
-//     linkUrl: DETAILS_PATH + DETAILS_SECTIONS.contact,
-//   },
-//   {
-//     image: Donate,
-//     title: 'donate',
-//     description: 'donate-description',
-//     linkText: 'how-to-donate',
-//     linkUrl: DETAILS_PATH + DETAILS_SECTIONS.donate,
-//   },
-//   {
-//     image: Sponsor,
-//     title: 'sponsor',
-//     description: 'sponsor-description',
-//     linkText: 'contact-us',
-//     linkUrl: DETAILS_PATH + DETAILS_SECTIONS.contact,
-//   },
-// ];
+const involvementCards: Array<CardProps> = [
+  {
+    image: Volunteer,
+    title: 'volunteer',
+    description: 'volunteer-description',
+    linkText: 'contact-us',
+    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.contact',
+  },
+  {
+    image: Donate,
+    title: 'donate',
+    description: 'donate-description',
+    linkText: 'how-to-donate',
+    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.donate',
+  },
+  {
+    image: Sponsor,
+    title: 'sponsor',
+    description: 'sponsor-description',
+    linkText: 'contact-us',
+    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.contact',
+  },
+];
 
 // const activityCarouselItems: Array<CarouselItemProps> = [
 //   {
@@ -99,6 +103,6 @@ const timelineEntries: Array<TimelineEntryProps> = [
 
 export {
   timelineEntries,
-  // involvementCards,
+  involvementCards,
   //  activityCarouselItems
 };

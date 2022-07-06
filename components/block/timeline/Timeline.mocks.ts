@@ -4,29 +4,29 @@ import { TimelineProps } from './TimelineProps';
 const base: TimelineProps = {
   entries: [
     {
-      date: DEFAULT.string,
+      date: DEFAULT.year,
       title: DEFAULT.string,
-      description: DEFAULT.string,
+      description: DEFAULT.longString,
     },
     {
-      date: DEFAULT.string,
+      date: DEFAULT.year,
       title: DEFAULT.string,
-      description: DEFAULT.string,
+      description: DEFAULT.longString,
     },
     {
-      date: DEFAULT.string,
+      date: DEFAULT.year,
       title: DEFAULT.string,
-      description: DEFAULT.string,
+      description: DEFAULT.longString,
     },
     {
-      date: DEFAULT.string,
+      date: DEFAULT.year,
       title: DEFAULT.string,
-      description: DEFAULT.string,
+      description: DEFAULT.longString,
     },
     {
-      date: DEFAULT.string,
+      date: DEFAULT.year,
       title: DEFAULT.string,
-      description: DEFAULT.string,
+      description: DEFAULT.longString,
     },
   ],
   title: DEFAULT.string,

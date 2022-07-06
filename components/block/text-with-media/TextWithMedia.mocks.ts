@@ -1,17 +1,17 @@
 import { DEFAULT } from 'lib/utils/constants';
-import Team from 'public/media/images/team1.jpg';
+import DefaultImage from 'public/media/tests/default-image-768x576.jpeg';
 import { TextWithMediaProps } from './TextWithMediaProps';
 
 const base: TextWithMediaProps = {
-  image: Team,
+  image: DefaultImage,
   title: DEFAULT.string,
-  text: DEFAULT.string,
+  text: DEFAULT.longString,
 };
 
 const withChildren: TextWithMediaProps = {
-  image: Team,
+  image: DefaultImage,
   title: DEFAULT.string,
-  text: DEFAULT.string,
+  text: DEFAULT.longString,
   children: DEFAULT.children,
 };
 

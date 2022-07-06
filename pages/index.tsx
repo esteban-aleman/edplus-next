@@ -1,4 +1,11 @@
-import { Hero, SimpleHero, TextWithMedia, Timeline } from 'components/block';
+import {
+  CardsGrid,
+  Hero,
+  SimpleHero,
+  TextWithMedia,
+  Timeline,
+} from 'components/block';
+import { CardProps } from 'components/block/cards-grid/partials/CardProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { MainLayout } from 'components/layout';
 import { SIMPLE_HERO_TYPES } from 'lib/utils/constants';
@@ -7,7 +14,7 @@ import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team1.jpg';
 import { NextPageWithLayout } from './page';
-import { timelineEntries } from './page-data';
+import { involvementCards, timelineEntries } from './page-data';
 
 const Home: NextPageWithLayout = () => {
   const activitiesId = 'activities';
@@ -27,6 +34,17 @@ const Home: NextPageWithLayout = () => {
         date: t(e.date),
         title: t(e.title),
         description: t(e.description),
+      };
+    });
+  };
+
+  const mapInvolvementCards = (entries: Array<CardProps>): Array<CardProps> => {
+    return entries.map((c) => {
+      return {
+        ...c,
+        linkText: t(c.linkText),
+        title: t(c.title),
+        description: t(c.description),
       };
     });
   };
@@ -60,6 +78,7 @@ const Home: NextPageWithLayout = () => {
         text={t('how-to-get-involved-description')}
         id={getInvolvedId}
       />
+      <CardsGrid cards={mapInvolvementCards(involvementCards)} />
     </>
   );
 };
