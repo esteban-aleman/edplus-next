@@ -10,9 +10,9 @@
 }
 .link {
   color: constants.$secondary;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover {
-    text-decoration: underline;
+    color: constants.$primary;
   }
 }
 

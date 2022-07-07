@@ -1,11 +1,11 @@
 import { DetailsList, TextWithMedia } from 'components/block';
-import { MainLayout } from 'components/layout';
-import { Link } from 'components/shared';
+import { DetailLayout, MainLayout } from 'components/layout';
 import { Sections, sections } from 'lib/pages-data/details';
 import { DETAILS_SECTIONS, TITLE_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
-import styles from 'styles/pages/details.module.scss';
+import { useEffect } from 'react';
 import { NextPageWithLayout } from '../page';
 
 const Details: NextPageWithLayout = () => {
@@ -13,6 +13,14 @@ const Details: NextPageWithLayout = () => {
   const { section } = router.query;
   const sectionParam = section?.toString();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (
+      !(sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam))
+    ) {
+      router.push('/');
+    }
+  }, [sectionParam, router]);
 
   const mapSections = (sections: Sections): Sections => {
     const keys = Object.keys(sections);
@@ -36,13 +44,18 @@ const Details: NextPageWithLayout = () => {
   const translatedSections = mapSections(sections);
 
   return (
-    <div className={styles.root}>
-      <div className={styles.container}>
-        <Link href={'/'} className={styles.link}>
-          {t('go-back')}
-        </Link>
-      </div>
-      {sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam) ? (
+    <>
+      {sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam) && (
+        <Head>
+          <title>{translatedSections[sectionParam].title}</title>
+          <meta
+            name="description"
+            content={`Educacion Plus - ${translatedSections[sectionParam].title}`}
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+      )}
+      {sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam) && (
         <TextWithMedia
           title={translatedSections[sectionParam].title}
           titleLevel={TITLE_TYPES.h1}
@@ -55,15 +68,17 @@ const Details: NextPageWithLayout = () => {
             />
           )}
         </TextWithMedia>
-      ) : (
-        <div>Redirect</div>
       )}
-    </div>
+    </>
   );
 };
 
 Details.getLayout = (page) => {
-  return <MainLayout>{page}</MainLayout>;
+  return (
+    <MainLayout>
+      <DetailLayout>{page}</DetailLayout>
+    </MainLayout>
+  );
 };
 
 export default Details;
