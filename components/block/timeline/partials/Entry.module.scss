@@ -62,6 +62,9 @@ $titleSize: constants.$font-m;
     text-align: right;
   }
 }
+.title {
+  margin-bottom: 1rem;
+}
 .last {
   margin-bottom: 0;
   &::after {
@@ -74,6 +77,7 @@ $titleSize: constants.$font-m;
 }
 .description {
   font-size: constants.$font-s;
+  margin-bottom: 1rem;
 }
 @media (max-width: constants.$tablet-breakpoint) {
   .root {

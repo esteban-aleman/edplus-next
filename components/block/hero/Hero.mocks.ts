@@ -1,5 +1,4 @@
 import { DEFAULT } from 'lib/utils/constants';
-import DefaultImage from 'public/media/tests/default-image-768x576.jpeg';
 import { HeroProps } from './HeroProps';
 
 const base: HeroProps = {
@@ -9,7 +8,7 @@ const base: HeroProps = {
   ctaCallback: () => {
     console.log('callback');
   },
-  backgroundImage: DefaultImage,
+  backgroundImage: DEFAULT.image,
 };
 
 export const mockHeroProps = {

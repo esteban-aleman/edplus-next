@@ -1,0 +1,32 @@
+@use 'styles/_constants.scss' as constants;
+
+.root {
+  position: relative;
+}
+.image {
+  min-height: 23.43rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.textContent {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.title,
+.text {
+  color: constants.$white;
+}
+.title {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.text {
+  font-size: constants.$font-s;
+  line-height: 1.25rem;
+}

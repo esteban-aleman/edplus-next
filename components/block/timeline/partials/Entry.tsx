@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { Title } from 'components/shared';
 import { TITLE_TYPES } from 'lib/utils/constants';
+import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Entry.module.scss';
 import { EntryProps } from './EntryProps';
@@ -9,17 +10,25 @@ const Entry = (props: EntryProps) => {
   const { date, title, description, order, isLast, revealLine, isInView } =
     props;
 
-  const { ref, inView } = useInView({
-    onChange: (inView) => isInView(inView),
+  //Show if there's no JS enabled
+  const [revealed, setRevealed] = useState(true);
+
+  const { ref } = useInView({
+    onChange: (inView) => setRevealed(inView),
     triggerOnce: true,
   });
+
+  //Hide if there's JS enabled
+  useEffect(() => {
+    isInView(revealed, order);
+  }, [revealed, isInView, order]);
 
   return (
     <li
       className={classNames(styles.root, {
         [styles.odd]: order % 2 === 0,
         [styles.last]: isLast,
-        [styles.reveal]: inView,
+        [styles.reveal]: revealed,
         [styles.revealLine]: revealLine,
       })}
       ref={ref}

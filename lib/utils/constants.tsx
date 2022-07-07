@@ -1,9 +1,12 @@
+import DefaultImage from 'public/media/tests/default-image-768x576.jpeg';
+
 export enum TITLE_TYPES {
   h1 = 'h1',
   h2 = 'h2',
   h3 = 'h3',
   h4 = 'h4',
   h5 = 'h5',
+  span = 'span',
 }
 
 export enum TEXT_TAGS {
@@ -58,6 +61,7 @@ export const DEFAULT = {
   childrenText: 'DEFAULT_CHILDREN',
   id: 'DEFAULT_ID',
   year: '1993',
+  image: DefaultImage,
   longString:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };

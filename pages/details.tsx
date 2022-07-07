@@ -3,19 +3,13 @@ import {
   Hero,
   SimpleHero,
   TextWithMedia,
-  TextWithMediaCarousel,
   Timeline,
 } from 'components/block';
 import { CardProps } from 'components/block/cards-grid/partials/CardProps';
-import { CarouselItemProps } from 'components/block/text-with-media-carousel/partials/CarouselItemProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { MainLayout } from 'components/layout';
 import { Button } from 'components/shared';
-import {
-  activityCarouselItems,
-  involvementCards,
-  timelineEntries,
-} from 'lib/pages-data/home';
+import { involvementCards, timelineEntries } from 'lib/pages-data/home';
 import { BUTTON_TYPES, SIMPLE_HERO_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
@@ -24,7 +18,7 @@ import Team from 'public/media/images/team1.jpg';
 import styles from 'styles/pages/index.module.scss';
 import { NextPageWithLayout } from './page';
 
-const Home: NextPageWithLayout = () => {
+const Details: NextPageWithLayout = () => {
   const activitiesId = 'activities';
   const getInvolvedId = 'getInvolved';
   const { t } = useTranslation();
@@ -53,18 +47,6 @@ const Home: NextPageWithLayout = () => {
         linkText: t(c.linkText),
         title: t(c.title),
         description: t(c.description),
-      };
-    });
-  };
-
-  const mapActivities = (
-    entries: Array<CarouselItemProps>
-  ): Array<CarouselItemProps> => {
-    return entries.map((a) => {
-      return {
-        ...a,
-        title: t(a.title),
-        description: t(a.description),
       };
     });
   };
@@ -99,12 +81,12 @@ const Home: NextPageWithLayout = () => {
         id={getInvolvedId}
       />
       <CardsGrid cards={mapInvolvementCards(involvementCards)} />
-      <TextWithMediaCarousel
-        title={t('activities')}
-        description={t('activities-description')}
+      {/* <TextWithMediaCarousel
+        title={t("activities")}
+        description={t("activities-description")}
         carouselItems={mapActivities(activityCarouselItems)}
         id={activitiesId}
-      />
+      /> */}
       <SimpleHero
         type={SIMPLE_HERO_TYPES.light}
         title={t('ready-to-get-involved')}
@@ -121,8 +103,8 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = (page) => {
+Details.getLayout = (page) => {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export default Home;
+export default Details;

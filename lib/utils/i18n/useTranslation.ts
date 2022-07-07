@@ -26,9 +26,15 @@ export const useTranslation = () => {
   }, [router?.locale]);
 
   const t = useCallback(
-    (key?: string) => {
+    (key?: string, ...params: string[]) => {
       if (!key) {
         return '';
+      }
+      if (params) {
+        const translation = dictionary?.[key] || key;
+        return params.reduce((t, value, index) => {
+          return t.replace(`{${index}}`, value);
+        }, translation);
       }
       return dictionary?.[key] || key;
     },

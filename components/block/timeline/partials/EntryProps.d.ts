@@ -6,5 +6,5 @@ export type EntryProps = {
   isFirst: boolean;
   isLast: boolean;
   revealLine?: boolean;
-  isInView: (isInView: boolean) => void;
+  isInView: (isInView: boolean, order: number) => void;
 };

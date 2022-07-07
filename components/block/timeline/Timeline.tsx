@@ -7,7 +7,9 @@ import { TimelineProps } from './TimelineProps';
 
 const Timeline = (props: TimelineProps) => {
   const { title, entries } = props;
-  const [revealed, setRevealed] = useState(entries.map(() => false));
+
+  //Show if there's no JS enabled
+  const [revealed, setRevealed] = useState(entries.map(() => true));
 
   const handleReveal = useCallback((isInView: boolean, index: number) => {
     setRevealed((prev) => {
@@ -36,7 +38,7 @@ const Timeline = (props: TimelineProps) => {
             isFirst={i === 0}
             isLast={i + 1 === entries.length}
             revealLine={revealed[i + 1]}
-            isInView={(isInView: boolean) => handleReveal(isInView, i)}
+            isInView={handleReveal}
           />
         ))}
       </ol>
