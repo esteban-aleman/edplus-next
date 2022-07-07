@@ -1,3 +1,4 @@
+import { TITLE_TYPES } from 'lib/utils/constants';
 import { StaticImageData } from 'next/image';
 
 export type TextWithMediaProps = {
@@ -5,4 +6,5 @@ export type TextWithMediaProps = {
   title: string;
   text?: string;
   children?: React.ReactNode;
+  titleLevel?: TITLE_TYPES;
 };

@@ -24,7 +24,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
   }, [carouselItems.length, autoMode]);
 
   const getSlideId = (index: number, title: string) => {
-    return `carousel-item-${index}-${title}`;
+    return `carousel-item-${index}-${title.replaceAll(' ', '-')}`;
   };
 
   return (
@@ -40,10 +40,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
           <Text text={description} className={styles.text} />
         </div>
 
-        <div
-          className={styles.carouselContainer}
-          aria-label={t('activities-carousel')}
-        >
+        <div className={styles.carouselContainer}>
           <ul className={styles.slides}>
             {carouselItems.map((c, i) => (
               <CarouselItem

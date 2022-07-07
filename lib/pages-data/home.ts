@@ -1,6 +1,7 @@
 import { CardProps } from 'components/block/cards-grid/partials/CardProps';
 import { CarouselItemProps } from 'components/block/text-with-media-carousel/partials/CarouselItemProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
+import { DETAILS_PATH, DETAILS_SECTIONS } from 'lib/utils/constants';
 import Camps from 'public/media/images/camps.jpg';
 import Community from 'public/media/images/community.jpg';
 import Donate from 'public/media/images/donate.jpg';
@@ -50,21 +51,21 @@ const involvementCards: Array<CardProps> = [
     title: 'volunteer',
     description: 'volunteer-description',
     linkText: 'contact-us',
-    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.contact',
+    linkUrl: DETAILS_PATH + DETAILS_SECTIONS.contact,
   },
   {
     image: Donate,
     title: 'donate',
     description: 'donate-description',
     linkText: 'how-to-donate',
-    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.donate',
+    linkUrl: DETAILS_PATH + DETAILS_SECTIONS.donate,
   },
   {
     image: Sponsor,
     title: 'sponsor',
     description: 'sponsor-description',
     linkText: 'contact-us',
-    linkUrl: 'DETAILS_PATH + DETAILS_SECTIONS.contact',
+    linkUrl: DETAILS_PATH + DETAILS_SECTIONS.contact,
   },
 ];
 

@@ -1,0 +1,17 @@
+@use 'styles/_constants.scss' as constants;
+
+.title {
+  margin: 1rem 0 0.5rem;
+}
+.text {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .title {
+    text-align: center;
+  }
+  .text {
+    text-align: center;
+  }
+}
