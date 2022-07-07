@@ -5,7 +5,7 @@ import styles from './TextWithMedia.module.scss';
 import { TextWithMediaProps } from './TextWithMediaProps';
 
 const TextWithMedia = (props: TextWithMediaProps) => {
-  const { title, text, image, children, titleLevel } = props;
+  const { title, text, image, children, titleLevel, imagePriority } = props;
   return (
     <section className={styles.root}>
       <div className={styles.contentLeft}>
@@ -26,6 +26,7 @@ const TextWithMedia = (props: TextWithMediaProps) => {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            priority={imagePriority}
           />
         </div>
       </div>

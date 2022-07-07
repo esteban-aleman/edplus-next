@@ -61,6 +61,7 @@ const Details: NextPageWithLayout = () => {
           titleLevel={TITLE_TYPES.h1}
           text={translatedSections[sectionParam].description}
           image={translatedSections[sectionParam].image}
+          imagePriority={true}
         >
           {translatedSections[sectionParam].details && (
             <DetailsList

@@ -7,4 +7,5 @@ export type TextWithMediaProps = {
   text?: string;
   children?: React.ReactNode;
   titleLevel?: TITLE_TYPES;
+  imagePriority?: boolean;
 };
