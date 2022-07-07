@@ -1,9 +1,9 @@
 import { Detail } from 'components/block/details-list/DetailsListProps';
-import Contact from 'media/imgs/contact.jpg';
-import Donate from 'media/imgs/donate.jpg';
-import Mission from 'media/imgs/mission.jpg';
-import Vision from 'media/imgs/vision.jpg';
 import { StaticImageData } from 'next/image';
+import Contact from 'public/media/images/contact.jpg';
+import Donate from 'public/media/images/donate.jpg';
+import Mission from 'public/media/images/mission.jpg';
+import Vision from 'public/media/images/vision.jpg';
 
 export type Sections = {
   [dynamicKey: string]: {
