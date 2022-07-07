@@ -1,7 +1,16 @@
 @use 'styles/_constants.scss' as constants;
 
 .root {
-  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity ease-in-out 0.7s;
+  list-style: none;
+}
+.inactive {
+  opacity: 0;
+  position: absolute;
 }
 .image {
   min-height: 23.43rem;

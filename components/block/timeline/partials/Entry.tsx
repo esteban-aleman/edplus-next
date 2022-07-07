@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Title } from 'components/shared';
 import { TITLE_TYPES } from 'lib/utils/constants';
 import { useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ const Entry = (props: EntryProps) => {
 
   return (
     <li
-      className={classNames(styles.root, {
+      className={classnames(styles.root, {
         [styles.odd]: order % 2 === 0,
         [styles.last]: isLast,
         [styles.reveal]: revealed,

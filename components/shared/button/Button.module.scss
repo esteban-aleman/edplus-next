@@ -26,4 +26,7 @@
     background-color: transparent;
     color: constants.$primary;
   }
+  &:focus {
+    outline-color: constants.$secondary;
+  }
 }

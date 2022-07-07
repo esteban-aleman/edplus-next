@@ -4,7 +4,7 @@ import { mockTextWithMediaCarouselProps } from './TextWithMediaCarousel.mocks';
 import { TextWithMediaCarouselProps } from './TextWithMediaCarouselProps';
 
 export default {
-  title: 'templates/TextWithMediaCarousel',
+  title: 'block/TextWithMediaCarousel',
   component: TextWithMediaCarousel,
   argTypes: {},
 } as ComponentMeta<typeof TextWithMediaCarousel>;

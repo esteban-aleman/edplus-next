@@ -3,4 +3,6 @@ export type CarouselItemProps = {
   title: string;
   description: string;
   ariaLabel?: string;
+  id?: string;
+  active?: boolean;
 };
