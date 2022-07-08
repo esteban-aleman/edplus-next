@@ -9,9 +9,8 @@ describe('TextWithMediaCarousel', () => {
     const title = screen.getByRole('heading', { level: 2 });
     expect(title).toHaveTextContent(mockTextWithMediaCarouselProps.base.title);
 
-    const cardsTitles = screen.getAllByRole('heading', { level: 3 });
-    expect(cardsTitles.length).toBe(
-      mockTextWithMediaCarouselProps.base.carouselItems.length
-    );
+    //For a11y just one card at a time
+    const cardsTitles = screen.getAllByRole('heading', { level: 4 });
+    expect(cardsTitles.length).toBe(1);
   });
 });

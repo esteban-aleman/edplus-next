@@ -69,7 +69,21 @@
   "today": "Hoy",
   "alt-logo": "Educacion Plus Logo",
   "home-link-title": "Ir a la página principal",
-  "card-of": "Tarjeta {0} de {1}",
+  "current-slide": "Tarjeta actual",
   "go-to-slide": "Ir a tarjeta",
-  "activities-carousel": "Carrusel de actividades"
+  "who-are-we-image-alt": "Descripcion de Imagen",
+  "contact-image-alt": "Descripcion de Imagen",
+  "mission-image-alt": "Descripcion de Imagen",
+  "vision-image-alt": "Descripcion de Imagen",
+  "donate-image-alt": "Descripcion de Imagen",
+  "volunteer-image-alt": "Descripcion de Imagen",
+  "donate-card-image-alt": "Descripcion de Imagen",
+  "sponsor-image-alt": "Descripcion de Imagen",
+  "activity-one-image-alt": "Descripcion de Imagen",
+  "activity-two-image-alt": "Descripcion de Imagen",
+  "activity-three-image-alt": "Descripcion de Imagen",
+  "activity-four-image-alt": "Descripcion de Imagen",
+  "activity-five-image-alt": "Descripcion de Imagen",
+  "activity-six-image-alt": "Descripcion de Imagen",
+  "activity-seven-image-alt": "Descripcion de Imagen"
 }

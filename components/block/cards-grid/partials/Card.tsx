@@ -5,14 +5,14 @@ import styles from './Card.module.scss';
 import { CardProps } from './CardProps';
 
 const Card = (props: CardProps) => {
-  const { image, title, description, linkText, linkUrl } = props;
+  const { image, title, description, linkText, linkUrl, imageAlt } = props;
   return (
     <li className={styles.root}>
       <div className={styles.imageContainer}>
         <div className={styles.image}>
           <Image
             src={image}
-            alt={'Needs Alt'}
+            alt={imageAlt}
             layout="fill"
             objectFit="cover"
             placeholder="blur"

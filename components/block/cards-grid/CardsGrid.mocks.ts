@@ -9,6 +9,7 @@ const base: CardsGridProps = {
       description: DEFAULT.longString,
       linkText: DEFAULT.string,
       linkUrl: DEFAULT.linkUrl,
+      imageAlt: DEFAULT.string,
     },
     {
       image: DEFAULT.image,
@@ -16,6 +17,7 @@ const base: CardsGridProps = {
       description: DEFAULT.longString,
       linkText: DEFAULT.string,
       linkUrl: DEFAULT.linkUrl,
+      imageAlt: DEFAULT.string,
     },
     {
       image: DEFAULT.image,
@@ -23,6 +25,7 @@ const base: CardsGridProps = {
       description: DEFAULT.longString,
       linkText: DEFAULT.string,
       linkUrl: DEFAULT.linkUrl,
+      imageAlt: DEFAULT.string,
     },
   ],
 };

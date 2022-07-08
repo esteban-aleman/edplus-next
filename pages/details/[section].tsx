@@ -28,6 +28,7 @@ const Details: NextPageWithLayout = () => {
     keys.forEach((k) => {
       translatedSections[k] = {
         ...sections[k],
+        imageAlt: t(sections[k].imageAlt),
         title: t(sections[k].title),
         description: t(sections[k].description || ''),
         details: sections[k].details?.map((d) => {
@@ -61,6 +62,7 @@ const Details: NextPageWithLayout = () => {
           titleLevel={TITLE_TYPES.h1}
           text={translatedSections[sectionParam].description}
           image={translatedSections[sectionParam].image}
+          imageAlt={translatedSections[sectionParam].imageAlt}
           imagePriority={true}
         >
           {translatedSections[sectionParam].details && (

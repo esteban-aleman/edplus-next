@@ -3,12 +3,14 @@ import { TextWithMediaProps } from './TextWithMediaProps';
 
 const base: TextWithMediaProps = {
   image: DEFAULT.image,
+  imageAlt: DEFAULT.string,
   title: DEFAULT.string,
   text: DEFAULT.longString,
 };
 
 const withChildren: TextWithMediaProps = {
   image: DEFAULT.image,
+  imageAlt: DEFAULT.string,
   title: DEFAULT.string,
   text: DEFAULT.longString,
   children: DEFAULT.children,

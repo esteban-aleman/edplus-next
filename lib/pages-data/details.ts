@@ -10,6 +10,7 @@ export type Sections = {
     title: string;
     description?: string;
     image: StaticImageData | string;
+    imageAlt: string;
     details?: Array<Detail>;
   };
 };
@@ -18,6 +19,7 @@ const sections: Sections = {
   contact: {
     title: 'contact-us',
     image: Contact,
+    imageAlt: 'contact-image-alt',
     details: [
       {
         title: 'address-title',
@@ -37,16 +39,19 @@ const sections: Sections = {
     title: 'mission-title',
     description: 'mission-details',
     image: Mission,
+    imageAlt: 'mission-image-alt',
   },
   vision: {
     title: 'vision-title',
     description: 'vision-details',
     image: Vision,
+    imageAlt: 'vision-image-alt',
   },
   donate: {
     title: 'donate-title',
     description: 'donate-details',
     image: Donate,
+    imageAlt: 'donate-image-alt',
     details: [
       {
         title: 'promerica-bank',

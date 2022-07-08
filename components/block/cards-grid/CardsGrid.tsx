@@ -15,6 +15,7 @@ const CardsGrid = (props: CardsGridProps) => {
             description={c.description}
             linkText={c.linkText}
             linkUrl={c.linkUrl}
+            imageAlt={c.imageAlt}
           />
         ))}
       </ul>

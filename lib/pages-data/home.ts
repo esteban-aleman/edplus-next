@@ -48,6 +48,7 @@ const timelineEntries: Array<TimelineEntryProps> = [
 const involvementCards: Array<CardProps> = [
   {
     image: Volunteer,
+    imageAlt: 'volunteer-image-alt',
     title: 'volunteer',
     description: 'volunteer-description',
     linkText: 'contact-us',
@@ -55,6 +56,7 @@ const involvementCards: Array<CardProps> = [
   },
   {
     image: Donate,
+    imageAlt: 'donate-card-image-alt',
     title: 'donate',
     description: 'donate-description',
     linkText: 'how-to-donate',
@@ -62,6 +64,7 @@ const involvementCards: Array<CardProps> = [
   },
   {
     image: Sponsor,
+    imageAlt: 'sponsor-image-alt',
     title: 'sponsor',
     description: 'sponsor-description',
     linkText: 'contact-us',
@@ -72,36 +75,43 @@ const involvementCards: Array<CardProps> = [
 const activityCarouselItems: Array<CarouselItemProps> = [
   {
     image: Mentor,
+    imageAlt: 'activity-one-image-alt',
     title: 'activity-one',
     description: 'activity-one-description',
   },
   {
     image: Soccer,
+    imageAlt: 'activity-two-image-alt',
     title: 'activity-two',
     description: 'activity-two-description',
   },
   {
     image: Tech,
+    imageAlt: 'activity-three-image-alt',
     title: 'activity-three',
     description: 'activity-three-description',
   },
   {
     image: Community,
+    imageAlt: 'activity-four-image-alt',
     title: 'activity-four',
     description: 'activity-four-description',
   },
   {
     image: School,
+    imageAlt: 'activity-five-image-alt',
     title: 'activity-five',
     description: 'activity-five-description',
   },
   {
     image: Camps,
+    imageAlt: 'activity-six-image-alt',
     title: 'activity-six',
     description: 'activity-six-description',
   },
   {
     image: Community,
+    imageAlt: 'activity-seven-image-alt',
     title: 'activity-seven',
     description: 'activity-seven-description',
   },

@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { Text, Title } from 'components/shared';
 import { TITLE_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CarouselItem from './partials/CarouselItem';
 import styles from './TextWithMediaCarousel.module.scss';
 import { TextWithMediaCarouselProps } from './TextWithMediaCarouselProps';
@@ -12,12 +12,19 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
   const { t } = useTranslation();
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoMode, setAutoMode] = useState(true);
+  const slidesRef = useRef<HTMLLIElement[]>([]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % carouselItems.length);
-    }, 3000);
-    if (!autoMode) {
+    slidesRef.current = slidesRef.current.slice(0, carouselItems.length);
+  }, [carouselItems.length]);
+
+  useEffect(() => {
+    let interval: NodeJS.Timer | undefined;
+    if (autoMode) {
+      interval = setInterval(() => {
+        setActiveSlide((prev) => (prev + 1) % carouselItems.length);
+      }, 3000);
+    } else {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
@@ -40,21 +47,32 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
           <Text text={description} className={styles.text} />
         </div>
 
-        <div className={styles.carouselContainer}>
+        <section
+          className={styles.carouselContainer}
+          aria-labelledby="carouselHeading"
+          onMouseEnter={() => setAutoMode(false)}
+          onMouseLeave={() => setAutoMode(true)}
+          onFocus={() => setAutoMode(false)}
+          onBlur={() => setAutoMode(true)}
+          tabIndex={-1}
+        >
+          <h3
+            id="carouselHeading"
+            className="sr-only"
+            title="Carousel de Actividades"
+          />
           <ul className={styles.slides}>
             {carouselItems.map((c, i) => (
               <CarouselItem
                 key={c.title}
                 image={c.image}
+                imageAlt={c.imageAlt}
                 title={c.title}
                 description={c.description}
                 active={activeSlide === i}
                 id={getSlideId(i, c.title)}
-                ariaLabel={t(
-                  'card-of',
-                  (i + 1).toString(),
-                  carouselItems.length.toString()
-                )}
+                ariaLabel={t('current-slide')}
+                ref={(el: HTMLLIElement) => (slidesRef.current[i] = el)}
               />
             ))}
           </ul>
@@ -67,7 +85,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
                 className={styles.paginationButton}
                 onClick={() => {
                   setActiveSlide(i);
-                  setAutoMode(false);
+                  slidesRef.current[i].focus();
                 }}
               >
                 <span
@@ -78,7 +96,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
               </button>
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </section>
   );

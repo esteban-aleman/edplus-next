@@ -53,6 +53,7 @@ const Home: NextPageWithLayout = () => {
         linkText: t(c.linkText),
         title: t(c.title),
         description: t(c.description),
+        imageAlt: t(c.imageAlt),
       };
     });
   };
@@ -65,6 +66,7 @@ const Home: NextPageWithLayout = () => {
         ...a,
         title: t(a.title),
         description: t(a.description),
+        imageAlt: t(a.imageAlt),
       };
     });
   };
@@ -87,6 +89,7 @@ const Home: NextPageWithLayout = () => {
         title={t('who-are-we')}
         text={t('who-is-edplus')}
         image={Team}
+        imageAlt={t('who-are-we-image-alt')}
       />
       <Timeline
         entries={mapTimeLineEntries(timelineEntries)}

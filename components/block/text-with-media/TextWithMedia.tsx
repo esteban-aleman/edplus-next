@@ -5,7 +5,8 @@ import styles from './TextWithMedia.module.scss';
 import { TextWithMediaProps } from './TextWithMediaProps';
 
 const TextWithMedia = (props: TextWithMediaProps) => {
-  const { title, text, image, children, titleLevel, imagePriority } = props;
+  const { title, text, image, children, titleLevel, imagePriority, imageAlt } =
+    props;
   return (
     <section className={styles.root}>
       <div className={styles.contentLeft}>
@@ -22,7 +23,7 @@ const TextWithMedia = (props: TextWithMediaProps) => {
         <div className={styles.image}>
           <Image
             src={image}
-            alt={'Needs Alt'}
+            alt={imageAlt}
             layout="fill"
             objectFit="cover"
             placeholder="blur"

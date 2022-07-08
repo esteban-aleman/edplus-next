@@ -3,6 +3,7 @@ import { StaticImageData } from 'next/image';
 
 export type TextWithMediaProps = {
   image: StaticImageData | string;
+  imageAlt: string;
   title: string;
   text?: string;
   children?: React.ReactNode;
