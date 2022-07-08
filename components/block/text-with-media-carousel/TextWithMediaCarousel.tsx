@@ -12,7 +12,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
   const { t } = useTranslation();
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoMode, setAutoMode] = useState(true);
-  const slidesRef = useRef<HTMLLIElement[]>([]);
+  const slidesRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     slidesRef.current = slidesRef.current.slice(0, carouselItems.length);
@@ -49,19 +49,14 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
 
         <section
           className={styles.carouselContainer}
-          aria-labelledby="carouselHeading"
+          aria-label={t('activities-carousel')}
           onMouseEnter={() => setAutoMode(false)}
           onMouseLeave={() => setAutoMode(true)}
           onFocus={() => setAutoMode(false)}
           onBlur={() => setAutoMode(true)}
           tabIndex={-1}
         >
-          <h3
-            id="carouselHeading"
-            className="sr-only"
-            title="Carousel de Actividades"
-          />
-          <ul className={styles.slides}>
+          <div className={styles.slides}>
             {carouselItems.map((c, i) => (
               <CarouselItem
                 key={c.title}
@@ -71,11 +66,15 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
                 description={c.description}
                 active={activeSlide === i}
                 id={getSlideId(i, c.title)}
-                ariaLabel={t('current-slide')}
-                ref={(el: HTMLLIElement) => (slidesRef.current[i] = el)}
+                ariaLabel={t(
+                  'current-slide',
+                  (i + 1).toString(),
+                  carouselItems.length.toString()
+                )}
+                ref={(el: HTMLDivElement) => (slidesRef.current[i] = el)}
               />
             ))}
-          </ul>
+          </div>
           <div className={styles.pagination}>
             {carouselItems.map((c, i) => (
               <button
@@ -83,6 +82,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
                 aria-controls={getSlideId(i, c.title)}
                 aria-label={`${t('go-to-slide')} ${i + 1}`}
                 className={styles.paginationButton}
+                aria-current={activeSlide === i}
                 onClick={() => {
                   setActiveSlide(i);
                   slidesRef.current[i].focus();

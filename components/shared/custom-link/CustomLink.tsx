@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classnames from 'classnames';
 import { TARGET_BLANK } from 'lib/utils/constants';
 import Link from 'next/link';
 import { HTMLAttributes } from 'react';
@@ -11,7 +11,7 @@ const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
     <a
       href={href}
       target={target}
-      className={cx(styles.root, className)}
+      className={classnames(styles.root, className)}
       {...rest}
     >
       {text}
@@ -19,7 +19,7 @@ const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
     </a>
   ) : (
     <Link href={href} locale={locale}>
-      <a className={cx(styles.root, className)} {...rest}>
+      <a className={classnames(styles.root, className)} {...rest}>
         {text}
         {children}
       </a>

@@ -69,7 +69,7 @@
   "today": "Hoy",
   "alt-logo": "Educacion Plus Logo",
   "home-link-title": "Ir a la página principal",
-  "current-slide": "Tarjeta actual",
+  "current-slide": "Tarjeta actual {0} de {1}",
   "go-to-slide": "Ir a tarjeta",
   "who-are-we-image-alt": "Descripcion de Imagen",
   "contact-image-alt": "Descripcion de Imagen",
@@ -85,5 +85,6 @@
   "activity-four-image-alt": "Descripcion de Imagen",
   "activity-five-image-alt": "Descripcion de Imagen",
   "activity-six-image-alt": "Descripcion de Imagen",
-  "activity-seven-image-alt": "Descripcion de Imagen"
+  "activity-seven-image-alt": "Descripcion de Imagen",
+  "activities-carousel": "Carrusel de actividades"
 }
