@@ -1,12 +1,12 @@
-import classnames from 'classnames';
+import cx from 'classnames';
 import styles from './Title.module.scss';
 import { TitleProps } from './TitleProps';
 
 const Title = (props: TitleProps) => {
-  const { id, title, type, level, className } = props;
+  const { id, title, type, level, className, ...rest } = props;
   const Tag = level;
   return (
-    <Tag id={id} className={classnames(styles[type], className)} {...props}>
+    <Tag id={id} className={cx(styles[type], className)} {...rest}>
       {title}
     </Tag>
   );
