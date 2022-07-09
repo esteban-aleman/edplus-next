@@ -5,24 +5,32 @@ import { DETAILS_SECTIONS, TITLE_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { NextPageWithLayout } from '../page';
 
 const Details: NextPageWithLayout = () => {
   const router = useRouter();
-  const { section } = router.query;
-  const sectionParam = section?.toString();
+  const [sectionParam, setSectionParam] = useState(
+    router.query.section?.toString() || ''
+  );
   const { t } = useTranslation();
 
+  const isValidSection = useMemo(
+    () => Object.keys(DETAILS_SECTIONS).includes(sectionParam),
+    [sectionParam]
+  );
+
   useEffect(() => {
-    if (
-      !(sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam))
-    ) {
+    setSectionParam(router.query.section?.toString() || '');
+  }, [router.query.section]);
+
+  useEffect(() => {
+    if (!isValidSection) {
       router.push('/');
     }
-  }, [sectionParam, router]);
+  }, [isValidSection, router]);
 
-  const mapSections = (sections: Sections): Sections => {
+  const translatedSections = useMemo(() => {
     const keys = Object.keys(sections);
     const translatedSections: Sections = {};
     keys.forEach((k) => {
@@ -40,13 +48,11 @@ const Details: NextPageWithLayout = () => {
       };
     });
     return translatedSections;
-  };
-
-  const translatedSections = mapSections(sections);
+  }, [t]);
 
   return (
     <>
-      {sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam) && (
+      {isValidSection && (
         <Head>
           <title>{translatedSections[sectionParam].title}</title>
           <meta
@@ -56,7 +62,7 @@ const Details: NextPageWithLayout = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       )}
-      {sectionParam && Object.keys(DETAILS_SECTIONS).includes(sectionParam) && (
+      {isValidSection && (
         <TextWithMedia
           title={translatedSections[sectionParam].title}
           titleLevel={TITLE_TYPES.h1}

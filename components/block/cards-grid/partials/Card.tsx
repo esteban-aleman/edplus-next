@@ -23,7 +23,7 @@ const Card = (props: CardProps) => {
         <Title
           className={styles.title}
           title={title}
-          level={TITLE_TYPES.h2}
+          level={TITLE_TYPES.h3}
           type={TITLE_TYPES.h4}
         />
         <Text className={styles.text} text={description} />

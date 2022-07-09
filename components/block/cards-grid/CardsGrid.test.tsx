@@ -7,7 +7,7 @@ describe('CardsGrid', () => {
   it('should render a CardsGrid', () => {
     render(<CardsGrid {...mockCardsGridProps.base} />);
 
-    const cards = screen.getAllByRole('heading', { level: 2 });
+    const cards = screen.getAllByRole('heading', { level: 3 });
     expect(cards.length).toBe(mockCardsGridProps.base.cards.length);
   });
 });

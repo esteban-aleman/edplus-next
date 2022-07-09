@@ -6,9 +6,6 @@ import {
   TextWithMediaCarousel,
   Timeline,
 } from 'components/block';
-import { CardProps } from 'components/block/cards-grid/partials/CardProps';
-import { CarouselItemProps } from 'components/block/text-with-media-carousel/partials/CarouselItemProps';
-import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { MainLayout } from 'components/layout';
 import { Button } from 'components/shared';
 import {
@@ -21,6 +18,7 @@ import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team1.jpg';
+import { useCallback, useMemo } from 'react';
 import styles from 'styles/pages/index.module.scss';
 import { NextPageWithLayout } from './page';
 
@@ -29,25 +27,24 @@ const Home: NextPageWithLayout = () => {
   const getInvolvedId = 'getInvolved';
   const { t } = useTranslation();
 
-  const scrollTo = (id: string) => {
+  //change to href with id
+  const scrollTo = useCallback((id: string) => {
     const el = document.getElementById(id);
     el && el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  }, []);
 
-  const mapTimeLineEntries = (
-    entries: Array<TimelineEntryProps>
-  ): Array<TimelineEntryProps> => {
-    return entries.map((e) => {
+  const mappedTimeLineEntries = useMemo(() => {
+    return timelineEntries.map((e) => {
       return {
         date: t(e.date),
         title: t(e.title),
         description: t(e.description),
       };
     });
-  };
+  }, [t]);
 
-  const mapInvolvementCards = (entries: Array<CardProps>): Array<CardProps> => {
-    return entries.map((c) => {
+  const mappedInvolvementCards = useMemo(() => {
+    return involvementCards.map((c) => {
       return {
         ...c,
         linkText: t(c.linkText),
@@ -56,12 +53,10 @@ const Home: NextPageWithLayout = () => {
         imageAlt: t(c.imageAlt),
       };
     });
-  };
+  }, [t]);
 
-  const mapActivities = (
-    entries: Array<CarouselItemProps>
-  ): Array<CarouselItemProps> => {
-    return entries.map((a) => {
+  const mappedActivities = useMemo(() => {
+    return activityCarouselItems.map((a) => {
       return {
         ...a,
         title: t(a.title),
@@ -69,7 +64,7 @@ const Home: NextPageWithLayout = () => {
         imageAlt: t(a.imageAlt),
       };
     });
-  };
+  }, [t]);
 
   return (
     <>
@@ -92,7 +87,7 @@ const Home: NextPageWithLayout = () => {
         imageAlt={t('who-are-we-image-alt')}
       />
       <Timeline
-        entries={mapTimeLineEntries(timelineEntries)}
+        entries={mappedTimeLineEntries}
         title={t('where-do-we-come-from')}
       />
       <SimpleHero
@@ -101,11 +96,11 @@ const Home: NextPageWithLayout = () => {
         text={t('how-to-get-involved-description')}
         id={getInvolvedId}
       />
-      <CardsGrid cards={mapInvolvementCards(involvementCards)} />
+      <CardsGrid cards={mappedInvolvementCards} />
       <TextWithMediaCarousel
         title={t('activities')}
         description={t('activities-description')}
-        carouselItems={mapActivities(activityCarouselItems)}
+        carouselItems={mappedActivities}
         id={activitiesId}
       />
       <SimpleHero

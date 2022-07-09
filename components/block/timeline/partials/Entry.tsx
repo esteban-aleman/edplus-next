@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import { Title } from 'components/shared';
 import { TITLE_TYPES } from 'lib/utils/constants';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Entry.module.scss';
 import { EntryProps } from './EntryProps';
@@ -49,4 +49,4 @@ const Entry = (props: EntryProps) => {
   );
 };
 
-export default Entry;
+export default memo(Entry);
