@@ -1,11 +1,11 @@
-import { Button, Title } from 'components/shared';
-import { BUTTON_TYPES, TITLE_TYPES } from 'lib/utils/constants';
+import { Link, Title } from 'components/shared';
+import { CTA_TYPES, TITLE_TYPES } from 'lib/utils/constants';
 import Image from 'next/image';
 import styles from './Hero.module.scss';
 import { HeroProps } from './HeroProps';
 
 const Hero = (props: HeroProps) => {
-  const { backgroundImage, eyebrow, title, ctaText, ctaCallback } = props;
+  const { backgroundImage, eyebrow, title, ctaText, ctaReferenceId } = props;
   return (
     <section className={styles.root}>
       <div className={styles.backgroundWrapper}>
@@ -29,10 +29,10 @@ const Hero = (props: HeroProps) => {
           level={TITLE_TYPES.h1}
           className={styles.title}
         />
-        <Button
-          type={BUTTON_TYPES.secondary}
+        <Link
+          cta={CTA_TYPES.secondary}
           text={ctaText}
-          callback={ctaCallback}
+          href={`#${ctaReferenceId}`}
         />
       </div>
     </section>

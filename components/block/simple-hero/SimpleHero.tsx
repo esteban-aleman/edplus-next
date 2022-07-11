@@ -7,7 +7,11 @@ import { SimpleHeroProps } from './SimpleHeroProps';
 const SimpleHero = (props: SimpleHeroProps) => {
   const { id, title, text, type, children } = props;
   return (
-    <section id={id} className={classnames(styles.root, styles[type])}>
+    <section
+      id={id}
+      className={classnames(styles.root, styles[type])}
+      tabIndex={-1}
+    >
       <Title
         title={title}
         type={TITLE_TYPES.h3}

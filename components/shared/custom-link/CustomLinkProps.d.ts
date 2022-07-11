@@ -7,4 +7,6 @@ export type CustomLinkProps = {
   className?: string;
   locale?: LOCALES;
   children?: React.ReactNode;
+  cta?: CTA_TYPES;
+  scroll?: boolean;
 };

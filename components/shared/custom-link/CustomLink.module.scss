@@ -4,3 +4,36 @@
   text-decoration: none;
   padding: 0.125rem;
 }
+
+.cta {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: constants.$font-xs;
+  font-weight: constants.$font-regular;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s, border-color ease-in-out 0.3s;
+}
+.ctaSecondary {
+  background-color: transparent;
+  border: solid 0.06rem constants.$white;
+  color: constants.$white;
+  &:hover {
+    background-color: constants.$primary;
+    border-color: constants.$primary;
+  }
+}
+.ctaPrimary {
+  background-color: constants.$primary;
+  color: constants.$white;
+  border: solid 0.06rem constants.$primary;
+  &:hover {
+    background-color: transparent;
+    color: constants.$primary;
+  }
+  &:focus {
+    outline-color: constants.$secondary;
+  }
+}

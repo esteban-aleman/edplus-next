@@ -25,7 +25,7 @@ export enum TEXT_TAGS {
   b = 'b',
 }
 
-export enum BUTTON_TYPES {
+export enum CTA_TYPES {
   primary = 'primary',
   secondary = 'secondary',
 }

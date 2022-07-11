@@ -5,10 +5,8 @@ const base: HeroProps = {
   eyebrow: DEFAULT.string,
   title: DEFAULT.string,
   ctaText: DEFAULT.string,
-  ctaCallback: () => {
-    console.log('callback');
-  },
   backgroundImage: DEFAULT.image,
+  ctaReferenceId: DEFAULT.string,
 };
 
 export const mockHeroProps = {

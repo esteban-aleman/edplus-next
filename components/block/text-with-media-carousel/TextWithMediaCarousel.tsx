@@ -35,7 +35,7 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
   };
 
   return (
-    <section id={id} className={styles.root}>
+    <section id={id} className={styles.root} tabIndex={-1}>
       <div className={styles.mainContainer}>
         <div className={styles.content}>
           <Title

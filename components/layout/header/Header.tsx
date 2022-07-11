@@ -22,10 +22,11 @@ const Header = () => {
           </div>
         </Link>
         <Link
-          href={'#'}
+          href={''}
           locale={router?.locale === LOCALES.ES ? LOCALES.EN : LOCALES.ES}
           text={t('alternative-language')}
           className={styles.link}
+          scroll={false}
         />
       </nav>
     </header>

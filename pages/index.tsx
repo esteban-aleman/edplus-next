@@ -7,18 +7,18 @@ import {
   Timeline,
 } from 'components/block';
 import { MainLayout } from 'components/layout';
-import { Button } from 'components/shared';
+import { Link } from 'components/shared';
 import {
   activityCarouselItems,
   involvementCards,
   timelineEntries,
 } from 'lib/pages-data/home';
-import { BUTTON_TYPES, SIMPLE_HERO_TYPES } from 'lib/utils/constants';
+import { CTA_TYPES, SIMPLE_HERO_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team1.jpg';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import styles from 'styles/pages/index.module.scss';
 import { NextPageWithLayout } from './page';
 
@@ -26,12 +26,6 @@ const Home: NextPageWithLayout = () => {
   const activitiesId = 'activities';
   const getInvolvedId = 'getInvolved';
   const { t } = useTranslation();
-
-  //change to href with id
-  const scrollTo = useCallback((id: string) => {
-    const el = document.getElementById(id);
-    el && el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
 
   const mappedTimeLineEntries = useMemo(() => {
     return timelineEntries.map((e) => {
@@ -77,8 +71,8 @@ const Home: NextPageWithLayout = () => {
         eyebrow={t('make-a-difference')}
         title={t('you-can-help')}
         ctaText={t('what-are-we-doing')}
-        ctaCallback={() => scrollTo(activitiesId)}
         backgroundImage={HeroImage}
+        ctaReferenceId={activitiesId}
       />
       <TextWithMedia
         title={t('who-are-we')}
@@ -108,11 +102,11 @@ const Home: NextPageWithLayout = () => {
         title={t('ready-to-get-involved')}
         text={t('ready-to-get-involved-description')}
       >
-        <Button
-          type={BUTTON_TYPES.primary}
+        <Link
           text={t('how-to-get-involved')}
           className={styles.getInvolvedButton}
-          callback={() => scrollTo(getInvolvedId)}
+          href={`#${getInvolvedId}`}
+          cta={CTA_TYPES.primary}
         />
       </SimpleHero>
     </>

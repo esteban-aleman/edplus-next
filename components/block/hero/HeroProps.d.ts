@@ -4,6 +4,6 @@ export type HeroProps = {
   eyebrow: string;
   title: string;
   ctaText: string;
-  ctaCallback: () => void;
   backgroundImage: StaticImageData | string;
+  ctaReferenceId: string;
 };
