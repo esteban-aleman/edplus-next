@@ -18,6 +18,7 @@ export type Sections = {
 const sections: Sections = {
   contact: {
     title: 'contact-us',
+    description: 'contact-us-details',
     image: Contact,
     imageAlt: 'contact-image-alt',
     details: [

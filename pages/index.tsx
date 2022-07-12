@@ -63,9 +63,15 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Educacion Plus</title>
-        <meta name="description" content={t('who-is-edplus')} />
+        <title>{t('home-meta-title')}</title>
+        <meta name="description" content={t('home-meta-description')} />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={t('home-meta-title')} />
+        <meta property="og:description" content={t('home-meta-description')} />
+        <meta
+          property="og:image"
+          content={'http://www.educacionplus.org/logo.cecc779a.png'}
+        />
       </Head>
       <Hero
         eyebrow={t('make-a-difference')}

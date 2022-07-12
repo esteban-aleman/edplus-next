@@ -26,11 +26,18 @@
 }
 .link {
   color: constants.$secondary;
-  margin: 1rem;
-  margin-right: 0;
+  margin-left: 1.5rem;
   transition: color ease-in-out 0.3s;
   font-size: constants.$font-s;
   &:hover {
     color: constants.$primary;
+  }
+}
+.menuLinks {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  li {
+    list-style: none;
   }
 }

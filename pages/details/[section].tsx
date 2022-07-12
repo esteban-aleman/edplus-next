@@ -57,9 +57,27 @@ const Details: NextPageWithLayout = () => {
           <title>{translatedSections[sectionParam].title}</title>
           <meta
             name="description"
-            content={`Educacion Plus - ${translatedSections[sectionParam].title}`}
+            content={translatedSections[sectionParam].description?.substring(
+              0,
+              160
+            )}
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            property="og:title"
+            content={translatedSections[sectionParam].title}
+          />
+          <meta
+            property="og:description"
+            content={translatedSections[sectionParam].description?.substring(
+              0,
+              60
+            )}
+          />
+          <meta
+            property="og:image"
+            content={'http://www.educacionplus.org/logo.cecc779a.png'}
+          />
         </Head>
       )}
       {isValidSection && (

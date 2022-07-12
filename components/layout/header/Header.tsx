@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { Link } from 'components/shared';
-import { LOCALES } from 'lib/utils/constants';
+import { DETAILS_PATH, DETAILS_SECTIONS, LOCALES } from 'lib/utils/constants';
 import useScrollDirection from 'lib/utils/hooks/useScrollDirection';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Image from 'next/image';
@@ -21,13 +21,31 @@ const Header = () => {
             <Image src={Logo} alt={t('alt-logo')} />
           </div>
         </Link>
-        <Link
-          href={''}
-          locale={router?.locale === LOCALES.ES ? LOCALES.EN : LOCALES.ES}
-          text={t('alternative-language')}
-          className={styles.link}
-          scroll={false}
-        />
+        <ul className={styles.menuLinks}>
+          <li>
+            <Link
+              href={DETAILS_PATH + DETAILS_SECTIONS.contact}
+              text={t('contact-us')}
+              className={styles.link}
+            />
+          </li>
+          <li>
+            <Link
+              href={DETAILS_PATH + DETAILS_SECTIONS.donate}
+              text={t('donate-title')}
+              className={styles.link}
+            />
+          </li>
+          <li>
+            <Link
+              href={'#'}
+              locale={router?.locale === LOCALES.ES ? LOCALES.EN : LOCALES.ES}
+              text={t('alternative-language')}
+              className={styles.link}
+              scroll={false}
+            />
+          </li>
+        </ul>
       </nav>
     </header>
   );

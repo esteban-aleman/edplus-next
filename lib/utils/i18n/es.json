@@ -51,6 +51,7 @@
   "address": "San Francisco de Dos Rios, Barrio Los Sauces, 250 sur del Parque, San José, Provincia de San José, Costa Rica",
   "email-title": "Correo Electrónico",
   "phone-title": "Teléfono",
+  "contact-us-details": "Puede ponerse en contacto con nosotros por los siguientes medios y con gusto le atenderemos.",
   "mission-title": "Misión",
   "mission-details": "Mostrar el amor de Dios y la vivencia practica del evangelio. Para proveer al niño y niña en alto riesgo en barrios marginales la oportunidad de desarrollarse de una manera cristiana y holística",
   "vision-title": "Visión",
@@ -63,11 +64,11 @@
   "legal-document-one": "Documento Legal Uno",
   "legal-document-two": "Documento Legal Dos",
   "legal-document-three": "Resumen Ejecutivo",
-  "copyright": "Derechos Reservados © 2022 Educacion Plus",
+  "copyright": "Derechos Reservados © 2022 Educación Plus",
   "links": "Links",
   "social-network": "Redes Sociales",
   "today": "Hoy",
-  "alt-logo": "Educacion Plus Logo",
+  "alt-logo": "Educación Plus Logo",
   "home-link-title": "Ir a la página principal",
   "current-slide": "Tarjeta actual {0} de {1}",
   "go-to-slide": "Ir a tarjeta",
@@ -86,5 +87,7 @@
   "activity-five-image-alt": "Descripcion de Imagen",
   "activity-six-image-alt": "Descripcion de Imagen",
   "activity-seven-image-alt": "Descripcion de Imagen",
-  "activities-carousel": "Carrusel de actividades"
+  "activities-carousel": "Carrusel de actividades",
+  "home-meta-title": "Educación Plus | Escribiendo una historia diferente",
+  "home-meta-description": "Organización cristiana sin fines de lucro que trabaja contra la deserción escolar en zonas urbano marginales con niños, niñas y jóvenes en alto riesgo social."
 }

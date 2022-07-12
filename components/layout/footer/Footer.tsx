@@ -68,7 +68,7 @@ const Footer = (props: FooterProps) => {
           />
           <span className={styles.separator}></span>
           <Link
-            href="#"
+            href="/docs/Resumen-Ejecutivo-Educacion-Plus.pdf"
             target={'_blank'}
             className={styles.legalLink}
             text={t('legal-document-three')}
