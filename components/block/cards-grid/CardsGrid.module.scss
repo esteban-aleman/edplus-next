@@ -4,8 +4,9 @@
   display: flex;
   padding: 0;
   margin: 0;
-  margin-bottom: 3rem;
+  padding-bottom: 1rem;
   list-style: none;
+  background-color: constants.$tertiary;
 }
 
 @media (max-width: constants.$tablet-breakpoint) {

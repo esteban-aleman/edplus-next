@@ -15,6 +15,7 @@
   letter-spacing: 0.25rem;
   cursor: pointer;
   transition: background-color ease-in-out 0.3s, border-color ease-in-out 0.3s;
+  display: inline-block;
 }
 .ctaSecondary {
   background-color: transparent;
@@ -35,5 +36,10 @@
   }
   &:focus {
     outline-color: constants.$secondary;
+  }
+}
+@media (max-width: constants.$tablet-breakpoint) {
+  .cta {
+    text-align: center;
   }
 }

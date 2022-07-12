@@ -20,13 +20,15 @@ const Card = (props: CardProps) => {
         </div>
       </div>
       <div className={styles.bottomContainer}>
-        <Title
-          className={styles.title}
-          title={title}
-          level={TITLE_TYPES.h3}
-          type={TITLE_TYPES.h4}
-        />
-        <Text className={styles.text} text={description} />
+        <div>
+          <Title
+            className={styles.title}
+            title={title}
+            level={TITLE_TYPES.h3}
+            type={TITLE_TYPES.h4}
+          />
+          <Text className={styles.text} text={description} />
+        </div>
         <Link className={styles.link} href={linkUrl}>
           {linkText}
         </Link>

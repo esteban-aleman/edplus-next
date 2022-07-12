@@ -74,9 +74,9 @@ const Home: NextPageWithLayout = () => {
         />
       </Head>
       <Hero
-        eyebrow={t('make-a-difference')}
-        title={t('you-can-help')}
-        ctaText={t('what-are-we-doing')}
+        eyebrow={t('hero-eyebrow')}
+        title={t('hero-title')}
+        ctaText={t('hero-cta')}
         backgroundImage={HeroImage}
         ctaReferenceId={activitiesId}
       />
@@ -90,6 +90,12 @@ const Home: NextPageWithLayout = () => {
         entries={mappedTimeLineEntries}
         title={t('where-do-we-come-from')}
       />
+      <TextWithMediaCarousel
+        title={t('activities')}
+        description={t('activities-description')}
+        carouselItems={mappedActivities}
+        id={activitiesId}
+      />
       <SimpleHero
         type={SIMPLE_HERO_TYPES.primary}
         title={t('how-to-get-involved')}
@@ -97,12 +103,6 @@ const Home: NextPageWithLayout = () => {
         id={getInvolvedId}
       />
       <CardsGrid cards={mappedInvolvementCards} />
-      <TextWithMediaCarousel
-        title={t('activities')}
-        description={t('activities-description')}
-        carouselItems={mappedActivities}
-        id={activitiesId}
-      />
       <SimpleHero
         type={SIMPLE_HERO_TYPES.light}
         title={t('ready-to-get-involved')}

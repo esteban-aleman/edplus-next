@@ -80,25 +80,25 @@ const activityCarouselItems: Array<CarouselItemProps> = [
     description: 'activity-one-description',
   },
   {
-    image: Soccer,
+    image: School,
     imageAlt: 'activity-two-image-alt',
     title: 'activity-two',
     description: 'activity-two-description',
   },
   {
-    image: Tech,
+    image: Soccer,
     imageAlt: 'activity-three-image-alt',
     title: 'activity-three',
     description: 'activity-three-description',
   },
   {
-    image: Community,
+    image: Tech,
     imageAlt: 'activity-four-image-alt',
     title: 'activity-four',
     description: 'activity-four-description',
   },
   {
-    image: School,
+    image: Community,
     imageAlt: 'activity-five-image-alt',
     title: 'activity-five',
     description: 'activity-five-description',
@@ -110,7 +110,7 @@ const activityCarouselItems: Array<CarouselItemProps> = [
     description: 'activity-six-description',
   },
   {
-    image: Community,
+    image: Camps,
     imageAlt: 'activity-seven-image-alt',
     title: 'activity-seven',
     description: 'activity-seven-description',

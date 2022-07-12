@@ -19,6 +19,11 @@
 }
 .bottomContainer {
   padding: 2rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 17.18rem);
+  box-sizing: border-box;
 }
 .title {
   margin-bottom: 1rem;

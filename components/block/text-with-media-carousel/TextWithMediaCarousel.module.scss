@@ -1,15 +1,15 @@
 @use 'styles/_constants.scss' as constants;
 
 .root {
-  background-color: constants.$tertiary;
+  background-color: constants.$white;
 }
 .mainContainer {
-  padding: 5.5rem 1.5rem;
+  padding: 5.5rem 1.5rem 7rem;
   max-width: constants.$containerWidth;
   margin: auto;
   display: flex;
   flex-direction: row-reverse;
-  background-color: constants.$tertiary;
+  background-color: constants.$white;
 }
 .content {
   width: 50%;
@@ -77,6 +77,7 @@
 @media (max-width: constants.$tablet-breakpoint) {
   .mainContainer {
     flex-direction: column;
+    padding-bottom: 5rem;
   }
   .content {
     width: 100%;
@@ -95,6 +96,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+    text-align: center;
   }
   .text {
     text-align: center;
