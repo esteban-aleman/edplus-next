@@ -8,11 +8,11 @@ import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 import { NextPageWithLayout } from '../page';
 
-const Details: NextPageWithLayout = () => {
+const Details: NextPageWithLayout<{
+  section: string;
+}> = ({ section }) => {
   const router = useRouter();
-  const [sectionParam, setSectionParam] = useState(
-    router.query.section?.toString() || ''
-  );
+  const [sectionParam, setSectionParam] = useState(section);
   const { t } = useTranslation();
 
   const isValidSection = useMemo(
@@ -23,12 +23,6 @@ const Details: NextPageWithLayout = () => {
   useEffect(() => {
     setSectionParam(router.query.section?.toString() || '');
   }, [router.query.section]);
-
-  useEffect(() => {
-    if (!isValidSection) {
-      router.push('/');
-    }
-  }, [isValidSection, router]);
 
   const translatedSections = useMemo(() => {
     const keys = Object.keys(sections);
@@ -99,6 +93,26 @@ const Details: NextPageWithLayout = () => {
     </>
   );
 };
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { section: DETAILS_SECTIONS.contact } },
+      { params: { section: DETAILS_SECTIONS.mission } },
+      { params: { section: DETAILS_SECTIONS.vision } },
+      { params: { section: DETAILS_SECTIONS.donate } },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: { section: string };
+}) {
+  return { props: { section: params.section || '' } };
+}
 
 Details.getLayout = (page) => {
   return (

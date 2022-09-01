@@ -3,7 +3,7 @@ import 'styles/global.scss';
 import { NextPageWithLayout } from './page';
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
+  Component: NextPageWithLayout<AppProps>;
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {

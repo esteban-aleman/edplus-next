@@ -22,7 +22,7 @@ import { useMemo } from 'react';
 import styles from 'styles/pages/index.module.scss';
 import { NextPageWithLayout } from './page';
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout<null> = () => {
   const activitiesId = 'activities';
   const getInvolvedId = 'getInvolved';
   const { t } = useTranslation();
