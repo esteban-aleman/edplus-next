@@ -4,6 +4,14 @@ import { DEFAULT } from 'lib/utils/constants';
 import MainLayout from './MainLayout';
 import { mockMainLayoutProps } from './MainLayout.mocks';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      asPath: '',
+    };
+  },
+}));
+
 describe('MainLayout', () => {
   it('should render a MainLayout', () => {
     render(<MainLayout {...mockMainLayoutProps.base} />);

@@ -28,6 +28,7 @@ const base: TextWithMediaCarouselProps = {
       active: false,
     },
   ],
+  locale: DEFAULT.locale,
 };
 
 export const mockTextWithMediaCarouselProps = {

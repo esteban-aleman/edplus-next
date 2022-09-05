@@ -5,7 +5,6 @@ const base: CustomLinkProps = {
   text: DEFAULT.string,
   href: DEFAULT.linkUrl,
   className: DEFAULT.className,
-  locale: DEFAULT.locale,
 };
 
 const external: CustomLinkProps = {
@@ -18,7 +17,6 @@ const external: CustomLinkProps = {
 const withChildren: CustomLinkProps = {
   href: DEFAULT.linkUrl,
   className: DEFAULT.className,
-  locale: DEFAULT.locale,
   children: DEFAULT.children,
 };
 

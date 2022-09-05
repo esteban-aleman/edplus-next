@@ -1,4 +1,5 @@
 import { Link } from 'components/shared';
+import { TARGET_BLANK } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Image from 'next/image';
 import Logo from 'public/media/images/logo_light.png';
@@ -8,8 +9,8 @@ import { FooterProps } from './FooterProps';
 import FooterColumn from './partials/FooterColumn';
 
 const Footer = (props: FooterProps) => {
-  const { columns } = props;
-  const { t } = useTranslation();
+  const { columns, locale } = props;
+  const { t } = useTranslation(locale);
 
   const mappedColumns = useMemo(
     () =>
@@ -20,11 +21,12 @@ const Footer = (props: FooterProps) => {
             return {
               ...l,
               text: t(l.text),
+              href: l.target === TARGET_BLANK ? l.href : `/${locale}${l.href}`,
             };
           }),
         };
       }),
-    [t, columns]
+    [t, columns, locale]
   );
 
   return (

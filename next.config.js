@@ -1,10 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/** @type {import('next').NextConfig}
+ * */ // eslint-disable-next-line @typescript-eslint/no-var-requires
+const withExportImages = require('next-export-optimize-images');
+const nextConfig = withExportImages({
   reactStrictMode: true,
-  i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'es',
-  },
-};
+});
 
 module.exports = nextConfig;

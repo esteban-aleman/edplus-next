@@ -1,11 +1,10 @@
 import { LOCALES } from 'lib/utils/constants';
-import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import EN from './en.json';
 import ES from './es.json';
 
 export const getLanguageDictionary = (
-  lang: string
+  lang: string | string[]
 ): { [key: string]: string } => {
   switch (lang) {
     case LOCALES.EN:
@@ -15,15 +14,15 @@ export const getLanguageDictionary = (
   }
 };
 
-export const useTranslation = () => {
-  const router = useRouter();
+// Default locale is ES
+export const useTranslation = (locale = 'es') => {
   const [dictionary, setDictionary] = useState<{ [key: string]: string }>(
-    getLanguageDictionary(router?.locale || LOCALES.ES)
+    getLanguageDictionary(locale)
   );
 
   useEffect(() => {
-    setDictionary(getLanguageDictionary(router?.locale || LOCALES.ES));
-  }, [router?.locale]);
+    setDictionary(getLanguageDictionary(locale));
+  }, [locale]);
 
   const t = useCallback(
     (key?: string, ...params: string[]) => {

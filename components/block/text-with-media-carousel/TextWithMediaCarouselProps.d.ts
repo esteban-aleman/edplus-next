@@ -5,4 +5,5 @@ export type TextWithMediaCarouselProps = {
   title: string;
   description: string;
   carouselItems: Array<CarouselItemProps>;
+  locale: string;
 };

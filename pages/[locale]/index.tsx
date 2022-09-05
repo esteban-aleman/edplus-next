@@ -2,10 +2,13 @@ import { Home, MainLayout } from 'components/layout';
 import { LOCALES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
-import { NextPageWithLayout } from './page';
+import { NextPageWithLayout } from '../page';
 
-const HomePage: NextPageWithLayout<null> = () => {
-  const { t } = useTranslation(LOCALES.ES);
+const LocalizedHomePage: NextPageWithLayout<{
+  locale: string;
+}> = ({ locale }) => {
+  const { t } = useTranslation(locale);
+
   return (
     <>
       <Head>
@@ -19,13 +22,36 @@ const HomePage: NextPageWithLayout<null> = () => {
           content={'http://www.educacionplus.org/logo.cecc779a.png'}
         />
       </Head>
-      <Home locale={LOCALES.ES} />
+      <Home locale={locale} />
     </>
   );
 };
 
-HomePage.getLayout = (page) => {
-  return <MainLayout locale={LOCALES.ES}>{page}</MainLayout>;
+LocalizedHomePage.getLayout = (page) => {
+  return <MainLayout locale={page.props.locale}>{page}</MainLayout>;
 };
 
-export default HomePage;
+export async function getStaticPaths() {
+  return {
+    paths: Object.values(LOCALES).map((locale) => ({
+      params: {
+        locale,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return {
+    props: {
+      ...params,
+    },
+  };
+}
+
+export default LocalizedHomePage;

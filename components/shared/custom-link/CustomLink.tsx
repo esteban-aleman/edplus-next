@@ -6,17 +6,8 @@ import styles from './CustomLink.module.scss';
 import { CustomLinkProps } from './CustomLinkProps';
 
 const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
-  const {
-    text,
-    target,
-    href,
-    className,
-    locale,
-    children,
-    cta,
-    scroll,
-    ...rest
-  } = props;
+  const { text, target, href, className, children, cta, scroll, ...rest } =
+    props;
   const classes = classnames(className, {
     [styles.root]: !cta,
     [styles.cta]: cta,
@@ -40,7 +31,7 @@ const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
       {children}
     </a>
   ) : (
-    <Link href={href} locale={locale} scroll={scroll}>
+    <Link href={href} scroll={scroll}>
       <a className={classes} onClick={focusOnScroll} {...rest}>
         {text}
         {children}

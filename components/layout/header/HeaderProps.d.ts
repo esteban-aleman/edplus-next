@@ -1,1 +1,1 @@
-export type HeaderProps = Record<string, unknown>;
+export type HeaderProps = { locale: string };

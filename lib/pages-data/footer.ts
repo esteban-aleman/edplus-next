@@ -1,12 +1,12 @@
+import { FooterProps } from 'components/layout/footer/FooterProps';
 import {
   DEFAULT,
   DETAILS_PATH,
   DETAILS_SECTIONS,
   TARGET_BLANK,
 } from 'lib/utils/constants';
-import { FooterProps } from './FooterProps';
 
-const mockFooterProps: FooterProps = {
+const footerData: FooterProps = {
   columns: [
     {
       title: 'links',
@@ -48,4 +48,4 @@ const mockFooterProps: FooterProps = {
   locale: DEFAULT.locale,
 };
 
-export { mockFooterProps };
+export { footerData };

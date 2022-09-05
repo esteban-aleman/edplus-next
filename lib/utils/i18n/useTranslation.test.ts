@@ -1,18 +1,8 @@
 import { renderHook } from '@testing-library/react';
+import { LOCALES } from '../constants';
 import EN from './en.json';
 import ES from './es.json';
 import { useTranslation } from './useTranslation';
-
-jest.mock('next/router', () => ({
-  useRouter: jest
-    .fn()
-    .mockImplementationOnce(() => ({
-      locale: 'es',
-    }))
-    .mockImplementationOnce(() => ({
-      locale: 'en',
-    })),
-}));
 
 describe('useTranslation', () => {
   test('should return default dictionary', () => {
@@ -23,7 +13,7 @@ describe('useTranslation', () => {
   });
 
   test('should return alternative dictionary', () => {
-    const { result } = renderHook(() => useTranslation());
+    const { result } = renderHook(() => useTranslation(LOCALES.EN));
     const { t } = result.current;
 
     expect(t('alternative-language')).toBe(EN['alternative-language']);

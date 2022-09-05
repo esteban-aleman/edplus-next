@@ -4,14 +4,14 @@ import styles from './DetailLayout.module.scss';
 import { DetailLayoutProps } from './DetailLayoutProps';
 
 const DetailLayout = (props: DetailLayoutProps) => {
-  const { children } = props;
+  const { children, locale } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation(locale);
 
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        <Link href={'/'} className={styles.link}>
+        <Link href={`/${locale}`} className={styles.link}>
           {t('go-back')}
         </Link>
       </div>

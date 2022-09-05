@@ -5,6 +5,14 @@ import { getLanguageDictionary } from 'lib/utils/i18n/useTranslation';
 import Header from './Header';
 import { mockHeaderProps } from './Header.mocks';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      asPath: '',
+    };
+  },
+}));
+
 const dictionary = getLanguageDictionary(DEFAULT.locale);
 
 describe('Header', () => {

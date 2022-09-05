@@ -1,14 +1,14 @@
 import { Footer, Header } from 'components/layout';
-import { mockFooterProps } from '../footer/Footer.mocks';
+import { footerData } from 'lib/pages-data/footer';
 import { MainLayoutProps } from './MainLayoutProps';
 
 const MainLayout = (props: MainLayoutProps) => {
-  const { children } = props;
+  const { children, locale } = props;
   return (
     <>
-      <Header />
+      <Header locale={locale} />
       <main>{children}</main>
-      <Footer columns={mockFooterProps.columns} />
+      <Footer columns={footerData.columns} locale={locale} />
     </>
   );
 };

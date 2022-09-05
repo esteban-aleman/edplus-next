@@ -2,14 +2,14 @@ import classnames from 'classnames';
 import { Text, Title } from 'components/shared';
 import { TITLE_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import CarouselItem from './partials/CarouselItem';
 import styles from './TextWithMediaCarousel.module.scss';
 import { TextWithMediaCarouselProps } from './TextWithMediaCarouselProps';
 
 const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
-  const { id, title, description, carouselItems } = props;
-  const { t } = useTranslation();
+  const { id, title, description, carouselItems, locale } = props;
+  const { t } = useTranslation(locale);
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoMode, setAutoMode] = useState(true);
   const slidesRef = useRef<HTMLDivElement[]>([]);
@@ -30,9 +30,9 @@ const TextWithMediaCarousel = (props: TextWithMediaCarouselProps) => {
     return () => clearInterval(interval);
   }, [carouselItems.length, autoMode]);
 
-  const getSlideId = (index: number, title: string) => {
+  const getSlideId = useCallback((index: number, title: string) => {
     return `carousel-item-${index}-${title.replaceAll(' ', '-')}`;
-  };
+  }, []);
 
   return (
     <section id={id} className={styles.root} tabIndex={-1}>
