@@ -25,7 +25,7 @@
                href="https://educacionplus.org"/>
   </url>
   <url>
-    <loc>https://educacionplus.org/details/contact</loc>
+    <loc>https://educacionplus.org/es/details/contact</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
@@ -34,7 +34,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/contact"/>
+               href="https://educacionplus.org/es/details/contact"/>
   </url>
   <url>
     <loc>https://educacionplus.org/en/details/contact</loc>
@@ -46,10 +46,10 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/contact"/>
+               href="https://educacionplus.org/es/details/contact"/>
   </url>
   <url>
-    <loc>https://educacionplus.org/details/donate</loc>
+    <loc>https://educacionplus.org/details/es/donate</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
@@ -58,7 +58,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/donate"/>
+               href="https://educacionplus.org/es/details/donate"/>
   </url>
   <url>
     <loc>https://educacionplus.org/en/details/donate</loc>
@@ -70,10 +70,10 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/donate"/>
+               href="https://educacionplus.org/es/details/donate"/>
   </url>
   <url>
-    <loc>https://educacionplus.org/details/mission</loc>
+    <loc>https://educacionplus.org/es/details/mission</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
@@ -82,7 +82,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/mission"/>
+               href="https://educacionplus.org/es/details/mission"/>
   </url>
   <url>
     <loc>https://educacionplus.org/en/details/mission</loc>
@@ -94,10 +94,10 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/mission"/>
+               href="https://educacionplus.org/es/details/mission"/>
   </url>
   <url>
-    <loc>https://educacionplus.org/details/vision</loc>
+    <loc>https://educacionplus.org/es/details/vision</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
@@ -106,7 +106,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/vision"/>
+               href="https://educacionplus.org/es/details/vision"/>
   </url>
   <url>
     <loc>https://educacionplus.org/en/details/vision</loc>
@@ -118,7 +118,7 @@
     <xhtml:link
                rel="alternate"
                hreflang="es"
-               href="https://educacionplus.org/details/vision"/>
+               href="https://educacionplus.org/es/details/vision"/>
   </url>
 </urlset>
 </xml>
