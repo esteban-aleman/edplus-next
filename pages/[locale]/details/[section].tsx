@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { useMemo } from 'react';
 import { NextPageWithLayout } from '../../page';
 
+import Helmet from 'react-helmet';
 const Details: NextPageWithLayout<{
   section: string;
   locale: string;
@@ -35,42 +36,36 @@ const Details: NextPageWithLayout<{
 
   return (
     <>
-      {true && (
-        <Head>
-          <title>{translatedSections[section].title}</title>
-          <meta
-            name="description"
-            content={translatedSections[section].description?.substring(0, 160)}
-          />
-          <link rel="icon" href="/favicon.ico" />
-          <meta
-            property="og:title"
-            content={translatedSections[section].title}
-          />
-          <meta
-            property="og:description"
-            content={translatedSections[section].description?.substring(0, 60)}
-          />
-          <meta
-            property="og:image"
-            content={'http://www.educacionplus.org/logo.cecc779a.png'}
-          />
-        </Head>
-      )}
-      {true && (
-        <TextWithMedia
-          title={translatedSections[section].title}
-          titleLevel={TITLE_TYPES.h1}
-          text={translatedSections[section].description}
-          image={translatedSections[section].image}
-          imageAlt={translatedSections[section].imageAlt}
-          imagePriority={true}
-        >
-          {translatedSections[section].details && (
-            <DetailsList details={translatedSections[section].details || []} />
-          )}
-        </TextWithMedia>
-      )}
+      <Helmet htmlAttributes={{ lang: locale }} />
+      <Head>
+        <title>{translatedSections[section].title}</title>
+        <meta
+          name="description"
+          content={translatedSections[section].description?.substring(0, 160)}
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={translatedSections[section].title} />
+        <meta
+          property="og:description"
+          content={translatedSections[section].description?.substring(0, 60)}
+        />
+        <meta
+          property="og:image"
+          content={'http://www.educacionplus.org/logo.cecc779a.png'}
+        />
+      </Head>
+      <TextWithMedia
+        title={translatedSections[section].title}
+        titleLevel={TITLE_TYPES.h1}
+        text={translatedSections[section].description}
+        image={translatedSections[section].image}
+        imageAlt={translatedSections[section].imageAlt}
+        imagePriority={true}
+      >
+        {translatedSections[section].details && (
+          <DetailsList details={translatedSections[section].details || []} />
+        )}
+      </TextWithMedia>
     </>
   );
 };

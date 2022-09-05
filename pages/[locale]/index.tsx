@@ -2,6 +2,7 @@ import { Home, MainLayout } from 'components/layout';
 import { LOCALES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import Head from 'next/head';
+import Helmet from 'react-helmet';
 import { NextPageWithLayout } from '../page';
 
 const LocalizedHomePage: NextPageWithLayout<{
@@ -11,6 +12,7 @@ const LocalizedHomePage: NextPageWithLayout<{
 
   return (
     <>
+      <Helmet htmlAttributes={{ lang: locale }} />
       <Head>
         <title>{t('home-meta-title')}</title>
         <meta name="description" content={t('home-meta-description')} />
