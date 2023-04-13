@@ -30,6 +30,7 @@ $titleSize: constants.$font-m;
     height: calc(100% - $titleSize);
     width: 2px;
     max-height: 0;
+    transform: translateX(-50%);
     transition: max-height ease-in-out 1s;
   }
   &.revealLine::after {
@@ -54,6 +55,7 @@ $titleSize: constants.$font-m;
   margin-right: calc(50% - $halfRightWidth);
   &::after {
     right: $halfRightWidth;
+    transform: translateX(50%);
     left: initial;
   }
   .contentLeft {
@@ -61,6 +63,13 @@ $titleSize: constants.$font-m;
     padding-right: $contentGap;
     text-align: right;
   }
+}
+.dot {
+  display: inline-block;
+  background-color: currentColor;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
 }
 .title {
   margin-bottom: 1rem;
@@ -97,6 +106,7 @@ $titleSize: constants.$font-m;
     &::after {
       left: $halfRightWidth;
       right: initial;
+      transform: translateX(-50%);
     }
   }
 }

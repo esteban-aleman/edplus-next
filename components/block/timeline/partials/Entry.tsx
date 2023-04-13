@@ -34,7 +34,11 @@ const Entry = (props: EntryProps) => {
       ref={ref}
     >
       <div className={styles.contentRight}>
-        <span>{date || '•'}</span>
+        <span>
+          {date || (
+            <div className={styles.dot} aria-hidden="true" tabIndex={-1}></div>
+          )}
+        </span>
       </div>
       <div className={styles.contentLeft}>
         <Title
