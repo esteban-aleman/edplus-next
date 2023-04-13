@@ -29,7 +29,7 @@ const Home = (props: HomeProps) => {
   const mappedTimeLineEntries = useMemo(() => {
     return timelineEntries.map((e) => {
       return {
-        date: t(e.date),
+        date: e.date ? t(e.date) : null,
         title: t(e.title),
         description: t(e.description),
       };
