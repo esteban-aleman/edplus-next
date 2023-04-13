@@ -1,5 +1,5 @@
 export type TimelineEntryProps = {
-  date: string;
+  date: string | null;
   title: string;
   description: string;
 };

@@ -1,9 +1,10 @@
 import { Detail } from 'components/block/details-list/DetailsListProps';
 import { StaticImageData } from 'next/image';
 import Contact from 'public/media/images/contact.jpg';
-import Donate from 'public/media/images/donate.jpg';
-import Mission from 'public/media/images/mission.jpg';
-import Vision from 'public/media/images/vision.jpg';
+import Donate from 'public/media/images/donate.jpeg';
+import Mission from 'public/media/images/mission.jpeg';
+import Purpose from 'public/media/images/purpose.jpeg';
+import Vision from 'public/media/images/vision.jpeg';
 
 export type Sections = {
   [dynamicKey: string]: {
@@ -48,6 +49,12 @@ const sections: Sections = {
     image: Vision,
     imageAlt: 'vision-image-alt',
   },
+  purpose: {
+    title: 'purpose-title',
+    description: 'purpose-details',
+    image: Purpose,
+    imageAlt: 'purpose-image-alt',
+  },
   donate: {
     title: 'donate-title',
     description: 'donate-details',
@@ -55,16 +62,20 @@ const sections: Sections = {
     imageAlt: 'donate-image-alt',
     details: [
       {
-        title: 'promerica-bank',
-        text: 'CR000000000000',
+        title: 'promerica-bank-colones',
+        text: 'donate-text-one',
       },
       {
-        title: 'bcr-bank',
-        text: 'CR000000000000',
+        title: 'promerica-bank-dollars',
+        text: 'donate-text-two',
+      },
+      {
+        title: 'account-details',
+        text: 'donate-text-three',
       },
       {
         title: 'sinpe-mobile',
-        text: '+506 2227 8642',
+        text: '+506 8848 6314',
       },
     ],
   },

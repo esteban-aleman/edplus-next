@@ -27,6 +27,10 @@ const footerData: FooterProps = {
           text: 'vision-title',
           href: DETAILS_PATH + DETAILS_SECTIONS.vision,
         },
+        {
+          text: 'purpose-title',
+          href: DETAILS_PATH + DETAILS_SECTIONS.purpose,
+        },
       ],
     },
     {

@@ -56,14 +56,14 @@ const Footer = (props: FooterProps) => {
       <div className={styles.bottom}>
         <div className={styles.legal}>
           <Link
-            href="#"
+            href="/docs/dataProtection.pdf"
             target={'_blank'}
             className={styles.legalLink}
             text={t('legal-document-one')}
           />
           <span className={styles.separator}></span>
           <Link
-            href="#"
+            href="/docs/dataPrivacy.pdf"
             target={'_blank'}
             className={styles.legalLink}
             text={t('legal-document-two')}

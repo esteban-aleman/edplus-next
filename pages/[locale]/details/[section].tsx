@@ -63,7 +63,10 @@ const Details: NextPageWithLayout<{
         imagePriority={true}
       >
         {translatedSections[section].details && (
-          <DetailsList details={translatedSections[section].details || []} />
+          <DetailsList
+            details={translatedSections[section].details || []}
+            locale={locale}
+          />
         )}
       </TextWithMedia>
     </>

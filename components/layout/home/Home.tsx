@@ -15,7 +15,7 @@ import {
 import { CTA_TYPES, SIMPLE_HERO_TYPES } from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import HeroImage from 'public/media/images/hero1.jpg';
-import Team from 'public/media/images/team1.jpg';
+import Team from 'public/media/images/team.jpeg';
 import { useMemo } from 'react';
 import styles from './Home.module.scss';
 import { HomeProps } from './HomeProps';

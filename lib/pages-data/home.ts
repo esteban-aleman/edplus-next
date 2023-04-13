@@ -2,15 +2,16 @@ import { CardProps } from 'components/block/cards-grid/partials/CardProps';
 import { CarouselItemProps } from 'components/block/text-with-media-carousel/partials/CarouselItemProps';
 import { TimelineEntryProps } from 'components/block/timeline/TimelineProps';
 import { DETAILS_PATH, DETAILS_SECTIONS } from 'lib/utils/constants';
-import Camps from 'public/media/images/camps.jpg';
-import Community from 'public/media/images/community.jpg';
-import Donate from 'public/media/images/donate.jpg';
+import Camps from 'public/media/images/camps.jpeg';
+import Community from 'public/media/images/community.jpeg';
+import Donate from 'public/media/images/donate.jpeg';
 import Mentor from 'public/media/images/mentor.jpg';
-import School from 'public/media/images/school.jpg';
-import Soccer from 'public/media/images/soccer.jpg';
+import School from 'public/media/images/school.jpeg';
+import Soccer from 'public/media/images/soccer.jpeg';
 import Sponsor from 'public/media/images/sponsor.jpg';
 import Tech from 'public/media/images/tech.jpg';
-import Volunteer from 'public/media/images/volunteer.jpg';
+import Volunteer from 'public/media/images/volunteer.png';
+import Xmas from 'public/media/images/xmas.jpeg';
 
 const timelineEntries: Array<TimelineEntryProps> = [
   {
@@ -19,22 +20,22 @@ const timelineEntries: Array<TimelineEntryProps> = [
     description: 'timeline-description-one',
   },
   {
-    date: '2007',
+    date: null, //2007
     title: 'timeline-title-two',
     description: 'timeline-description-two',
   },
+  // {
+  //   date: '2005',
+  //   title: 'timeline-title-three',
+  //   description: 'timeline-description-three',
+  // },
   {
-    date: '2005',
-    title: 'timeline-title-three',
-    description: 'timeline-description-three',
-  },
-  {
-    date: '2012',
+    date: null,
     title: 'timeline-title-four',
     description: 'timeline-description-four',
   },
   {
-    date: '2017',
+    date: null, //'2011'
     title: 'timeline-title-five',
     description: 'timeline-description-five',
   },
@@ -98,13 +99,13 @@ const activityCarouselItems: Array<CarouselItemProps> = [
     description: 'activity-four-description',
   },
   {
-    image: Community,
+    image: Xmas,
     imageAlt: 'activity-five-image-alt',
     title: 'activity-five',
     description: 'activity-five-description',
   },
   {
-    image: Camps,
+    image: Community,
     imageAlt: 'activity-six-image-alt',
     title: 'activity-six',
     description: 'activity-six-description',

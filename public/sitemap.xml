@@ -120,5 +120,29 @@
                hreflang="es"
                href="https://educacionplus.org/es/details/vision"/>
   </url>
+  <url>
+    <loc>https://educacionplus.org/es/details/purpose</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://educacionplus.org/en/details/purpose"
+               />
+    <xhtml:link
+               rel="alternate"
+               hreflang="es"
+               href="https://educacionplus.org/es/details/purpose"/>
+  </url>
+  <url>
+    <loc>https://educacionplus.org/en/details/purpose</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://educacionplus.org/en/details/purpose"
+               />
+    <xhtml:link
+               rel="alternate"
+               hreflang="es"
+               href="https://educacionplus.org/es/details/purpose"/>
+  </url>
 </urlset>
 </xml>

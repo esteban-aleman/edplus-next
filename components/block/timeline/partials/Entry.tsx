@@ -34,7 +34,7 @@ const Entry = (props: EntryProps) => {
       ref={ref}
     >
       <div className={styles.contentRight}>
-        <span>{date}</span>
+        <span>{date || '•'}</span>
       </div>
       <div className={styles.contentLeft}>
         <Title

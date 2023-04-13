@@ -1,5 +1,5 @@
 export type EntryProps = {
-  date: string;
+  date: string | null;
   title: string;
   description: string;
   order: number;

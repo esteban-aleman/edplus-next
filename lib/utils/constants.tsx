@@ -49,6 +49,7 @@ export const DETAILS_SECTIONS = {
   mission: 'mission',
   vision: 'vision',
   donate: 'donate',
+  purpose: 'purpose',
 };
 export const DEFAULT = {
   string: 'DEFAULT_STRING',

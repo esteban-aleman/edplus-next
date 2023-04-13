@@ -5,4 +5,5 @@ export type Detail = {
 
 export type DetailsListProps = {
   details: Array<Detail>;
+  locale: string;
 };

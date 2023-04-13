@@ -5,6 +5,7 @@
 }
 .text {
   margin-bottom: 2rem;
+  white-space: pre-line;
 }
 
 @media (max-width: constants.$tablet-breakpoint) {
