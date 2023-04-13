@@ -7,6 +7,7 @@ const base: DetailsListProps = {
     { title: DEFAULT.string + 2, text: DEFAULT.longString },
     { title: DEFAULT.string + 3, text: DEFAULT.longString },
   ],
+  locale: DEFAULT.locale,
 };
 
 export const mockDetailsListProps = {
