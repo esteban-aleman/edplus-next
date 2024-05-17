@@ -1,10 +1,14 @@
 import { Detail } from 'components/block/details-list/DetailsListProps';
+import { Link, Text } from 'components/shared';
+import PayPalIcon from 'lib/icons/paypal';
+import { CTA_TYPES, PAYPAL_LINK, TARGET_BLANK } from 'lib/utils/constants';
 import { StaticImageData } from 'next/image';
 import Contact from 'public/media/images/contact.jpg';
 import Donate from 'public/media/images/donate.jpeg';
 import Mission from 'public/media/images/mission.jpeg';
 import Purpose from 'public/media/images/purpose.jpeg';
 import Vision from 'public/media/images/vision.jpeg';
+import { type ReactNode } from 'react';
 
 export type Sections = {
   [dynamicKey: string]: {
@@ -13,6 +17,7 @@ export type Sections = {
     image: StaticImageData | string;
     imageAlt: string;
     details?: Array<Detail>;
+    additionalContent?: { text: string; content: (text: string) => ReactNode };
   };
 };
 
@@ -59,6 +64,14 @@ const sections: Sections = {
     title: 'donate-title',
     description: 'donate-details',
     image: Donate,
+    additionalContent: {
+      text: 'donate-paypal',
+      content: (text: string) => (
+        <Link href={PAYPAL_LINK} target={TARGET_BLANK} cta={CTA_TYPES.paypal}>
+          <PayPalIcon /> <Text text={text} />
+        </Link>
+      ),
+    },
     imageAlt: 'donate-image-alt',
     details: [
       {

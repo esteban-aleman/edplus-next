@@ -22,6 +22,15 @@ const Details: NextPageWithLayout<{
         ...sections[k],
         imageAlt: t(sections[k].imageAlt),
         title: t(sections[k].title),
+        ...(!!sections[k].additionalContent && {
+          additionalContent: {
+            // TS not picking up the validation on previous line
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            text: t(sections[k].additionalContent!.text),
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            content: sections[k].additionalContent!.content,
+          },
+        }),
         description: t(sections[k].description || ''),
         details: sections[k].details?.map((d) => {
           return {
@@ -62,6 +71,13 @@ const Details: NextPageWithLayout<{
         imageAlt={translatedSections[section].imageAlt}
         imagePriority={true}
       >
+        {translatedSections[section].additionalContent &&
+          // TS not picking up the validation on previous line
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          translatedSections[section].additionalContent!.content(
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            translatedSections[section].additionalContent!.text
+          )}
         {translatedSections[section].details && (
           <DetailsList
             details={translatedSections[section].details || []}

@@ -28,6 +28,7 @@ export enum TEXT_TAGS {
 export enum CTA_TYPES {
   primary = 'primary',
   secondary = 'secondary',
+  paypal = 'paypal,',
 }
 
 export enum SIMPLE_HERO_TYPES {
@@ -43,6 +44,9 @@ export enum LOCALES {
 export const DETAILS_PATH = '/details/';
 
 export const TARGET_BLANK = '_blank';
+
+export const PAYPAL_LINK =
+  'https://www.paypal.com/donate/?hosted_button_id=5JHL5DLYAKTEC';
 
 export const DETAILS_SECTIONS = {
   contact: 'contact',

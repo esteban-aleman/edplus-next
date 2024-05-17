@@ -6,13 +6,19 @@ import {
   TextWithMediaCarousel,
   Timeline,
 } from 'components/block';
-import { Link } from 'components/shared';
+import { Link, Text } from 'components/shared';
+import PayPalIcon from 'lib/icons/paypal';
 import {
   activityCarouselItems,
   involvementCards,
   timelineEntries,
 } from 'lib/pages-data/home';
-import { CTA_TYPES, SIMPLE_HERO_TYPES } from 'lib/utils/constants';
+import {
+  CTA_TYPES,
+  PAYPAL_LINK,
+  SIMPLE_HERO_TYPES,
+  TARGET_BLANK,
+} from 'lib/utils/constants';
 import { useTranslation } from 'lib/utils/i18n/useTranslation';
 import HeroImage from 'public/media/images/hero1.jpg';
 import Team from 'public/media/images/team.jpeg';
@@ -91,7 +97,11 @@ const Home = (props: HomeProps) => {
         title={t('how-to-get-involved')}
         text={t('how-to-get-involved-description')}
         id={getInvolvedId}
-      />
+      >
+        <Link href={PAYPAL_LINK} target={TARGET_BLANK} cta={CTA_TYPES.paypal}>
+          <PayPalIcon /> <Text text={t('donate-paypal')} />
+        </Link>
+      </SimpleHero>
       <CardsGrid cards={mappedInvolvementCards} />
       <SimpleHero
         type={SIMPLE_HERO_TYPES.light}

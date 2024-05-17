@@ -13,6 +13,7 @@ const CustomLink = (props: CustomLinkProps & HTMLAttributes<HTMLElement>) => {
     [styles.cta]: cta,
     [styles.ctaPrimary]: cta === CTA_TYPES.primary,
     [styles.ctaSecondary]: cta === CTA_TYPES.secondary,
+    [styles.ctaPaypal]: cta === CTA_TYPES.paypal,
   });
 
   const focusOnScroll = useCallback(() => {

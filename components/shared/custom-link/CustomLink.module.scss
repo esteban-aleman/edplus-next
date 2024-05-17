@@ -38,6 +38,21 @@
     outline-color: constants.$secondary;
   }
 }
+.ctaPaypal {
+  background-color: constants.$paypal-bg;
+  color: constants.$paypal-text;
+  border: solid 0.06rem constants.$paypal-bg;
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  &:hover {
+    background-color: constants.$paypal-bg-hover;
+  }
+  &:focus {
+    outline-color: constants.$secondary;
+  }
+}
 @media (max-width: constants.$tablet-breakpoint) {
   .cta {
     text-align: center;
