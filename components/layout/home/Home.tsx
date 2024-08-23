@@ -80,6 +80,7 @@ const Home = (props: HomeProps) => {
         text={t('who-is-edplus')}
         image={Team}
         imageAlt={t('who-are-we-image-alt')}
+        imageBehaviour="contain"
       />
       <Timeline
         entries={mappedTimeLineEntries}
